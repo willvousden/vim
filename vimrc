@@ -69,14 +69,6 @@ if has("gui_running")
 	" Assume we're running in portable mode.
 	set nobackup
 	set nowritebackup
-	if has("win32") || has("win64")
-		let viminfopath=$VIM."\\.viminfo"
-		set directory=$TMP
-	else
-		let viminfopath=$VIM."/.viminfo"
-		"set directory=~/tmp
-	end
-	"execute "set viminfo='1000,n".escape(viminfopath, ' ')
 	
 	" Disable toolbar.
 	set guioptions-=T
