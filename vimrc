@@ -5,7 +5,6 @@ set encoding=utf-8
 set vb
 set ai
 set background=dark
-"set gfn=Consolas:h10
 set foldmethod=syntax
 set backspace=indent,eol,start
 set nocompatible
@@ -15,12 +14,11 @@ set showmode
 set scrolloff=3
 set cursorline
 set number
-set relativenumber
 nmap <silent> <leader>l :set list!<CR>
 set listchars=tab:▸·,eol:¬,trail:·,extends:«,precedes:»,nbsp:_
 if has("gui_running")
-    let g:molokai_original=1
-    colorscheme molokai
+	let g:molokai_original=1
+	colorscheme molokai
 endif
 
 set tabstop=4
@@ -45,6 +43,7 @@ map <PageDown> <C-d>
 imap <PageUp> <C-o><C-u>
 imap <PageDown> <C-o><C-d>
 
+" Yank to end of line.
 map <silent> Y y$
 
 " Session managment.
@@ -54,11 +53,6 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
-
-" Orgmode stuff.
-"filetype on
-"filetype plugin on
-"filetype indent on
 
 " Tag stuff.
 let tlist_tex_settings='tex;b:bibitem;c:command;l:label'
@@ -109,16 +103,20 @@ if has("autocmd")
 	" Enter selects the current tag and backspace goes back.
 	autocmd FileType help nnoremap <CR> <C-]>
 	autocmd FileType help nnoremap <buffer><BS> <C-T>
-
-    " Automatically enable relative numbering.
-    autocmd BufReadPost * set relativenumber
-    autocmd BufNewFile * set relativenumber
-    autocmd BufWinEnter * set relativenumber
 	
-    if has("win32") || has("win64")
-        " Maximize window.
-        autocmd GUIEnter * simalt ~x
-    endif
+	if has("win32") || has("win64")
+		" Maximize window.
+		autocmd GUIEnter * simalt ~x
+	endif
+endif
+
+" Stuff for 7.0.3.
+if version >= 703
+	" Automatically enable relative numbering.
+	set relativenumber
+	autocmd BufReadPost * set relativenumber
+	autocmd BufNewFile * set relativenumber
+	autocmd BufWinEnter * set relativenumber
 endif
 
 " Auto-centre on find!
