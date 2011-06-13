@@ -126,10 +126,10 @@ nnoremap <silent> <C-LeftMouse> <LeftMouse>za
 nnoremap <silent> <S-LeftMouse> <LeftMouse>*
 
 " Camel/Pascal case identifier navigation.
-nnoremap <C-Left> :call search('\<\<Bar>\u', 'bW')<CR>
-nnoremap <C-Right> :call search('\<\<Bar>\u', 'W')<CR>
-inoremap <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
-inoremap <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
+nnoremap <silent> <C-Left> :call search('\<\<Bar>\u', 'bW')<CR>
+nnoremap <silent> <C-Right> :call search('\<\<Bar>\u', 'W')<CR>
+inoremap <silent> <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
+inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
 
 " NERDTree stuff.
 autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
@@ -140,92 +140,56 @@ autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
 let javaScript_fold=1
 autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 
-
-" Pre-defined stuff follows!
-
-" An example for a vimrc file.
-
-" Maintainer:    Bram Moolenaar <Bram@vim.org>
-" Last change:    2008 Jul 02
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"          for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"        for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-if has("vms")
-  set nobackup        " do not keep a backup file, use versions instead
-else
-  " set backup        " keep a backup file
-endif
-set history=50        " keep 50 lines of command line history
-set ruler        " show the cursor position all the time
-set showcmd        " display incomplete commands
-set incsearch        " do incremental searching
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
+" Switch on syntax and search pattern highlighting when the terminal has
+" colour support.
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
 
+" Set backup and history things.
+if has("vms")
+	" Use versions rather than a backup file.
+	set nobackup
+else
+	" Keep a backup file.
+	set backup
+endif
+
+set history=50 " Keep 50 lines of command line history.
+set ruler " Show the cursor position all the time.
+set showcmd " Display incomplete commands.
+set incsearch " Enable incremental searching.
+
+" When deleting lines or words, insert an undo break first to avoid loss.
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
+
+" Enable mouse support.
+if has('mouse')
+	set mouse=a
+endif
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
+	" Enable file type detection.
+	filetype plugin indent on
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+	" Put these in an autocmd group, so that we can delete them easily.
+	augroup vimrcEx
+	au!
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  " EDIT: This is taken care of above!
-  "autocmd BufReadPost *
-	"\ if line("'\"") > 1 && line("'\"") <= line("$") |
-	"\   exe "normal! g`\"" |
-	"\ endif
-
-  augroup END
-
+	" For all text files, set 'textwidth' to 78 characters.
+	autocmd FileType text setlocal textwidth=78
+augroup END
 else
-
-  set autoindent        " always set autoindenting on
-
-endif " has("autocmd")
+	" Just settle for having normal autoindenting.
+	set autoindent
+endif
 
 " Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
+" file it was loaded from, thus the changes you made.  Only define it when not
+" defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
