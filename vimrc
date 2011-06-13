@@ -67,13 +67,13 @@ map <leader>s :source $VIM/.session<CR>:exe ":echo 'Session loaded!'"<CR>
 
 " Set backup and history things.
 set dir=/tmp
+set backupdir=/tmp
 if has("vms")
 	" Use versions rather than a backup file.
 	set nobackup
 else
 	" Keep a backup file.
 	set backup
-	set backupdir=/tmp
 endif
 
 if has("gui_running")
