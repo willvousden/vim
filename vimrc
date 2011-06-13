@@ -65,10 +65,23 @@ map <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimr
 map <leader>q :mksession! $VIM/.session<CR>:exe ":echo 'Session saved!'"<CR>
 map <leader>s :source $VIM/.session<CR>:exe ":echo 'Session loaded!'"<CR>
 
-if has("gui_running")
-	" Assume we're running in portable mode.
+" Set backup and history things.
+set dir=/tmp
+if has("vms")
+	" Use versions rather than a backup file.
 	set nobackup
-	set nowritebackup
+else
+	" Keep a backup file.
+	set backup
+	set backupdir=/tmp
+endif
+
+if has("gui_running")
+	if has("win32") || has("win64")
+		" Assume we're running in portable mode, so disable backups.
+		set nobackup
+		set nowritebackup
+	endif
 	
 	" Disable toolbar.
 	set guioptions-=T
@@ -145,15 +158,6 @@ autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
-endif
-
-" Set backup and history things.
-if has("vms")
-	" Use versions rather than a backup file.
-	set nobackup
-else
-	" Keep a backup file.
-	set backup
 endif
 
 set history=50 " Keep 50 lines of command line history.
