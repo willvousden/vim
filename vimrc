@@ -143,8 +143,8 @@ autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 " Switch on syntax and search pattern highlighting when the terminal has
 " colour support.
 if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
+	syntax on
+	set hlsearch
 endif
 
 " Set backup and history things.
@@ -181,7 +181,8 @@ if has("autocmd")
 
 	" For all text files, set 'textwidth' to 78 characters.
 	autocmd FileType text setlocal textwidth=78
-augroup END
+
+	augroup END
 else
 	" Just settle for having normal autoindenting.
 	set autoindent
@@ -191,6 +192,6 @@ endif
 " file it was loaded from, thus the changes you made.  Only define it when not
 " defined already.
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+	command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+	  \ | wincmd p | diffthis
 endif
