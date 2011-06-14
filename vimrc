@@ -1,4 +1,4 @@
-let mapleader = ","
+let mapleader=","
 
 " Basic stuff.
 set encoding=utf-8
