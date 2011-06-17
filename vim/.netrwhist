@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/will/bin'
-let g:netrw_dirhist_2='/etc/_bash_completion.d'
-let g:netrw_dirhist_3='/cygdrive/f/Documents/Development/Visual Studio 2010/Projects/Landau/Landau'
-let g:netrw_dirhist_4='/home/will/documents/Work/University/Year 4/project/talk'
-let g:netrw_dirhist_5='/var/www'
