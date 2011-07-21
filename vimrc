@@ -88,6 +88,7 @@ if has("gui_running")
 endif
 
 if has("autocmd")
+	au Filetype html,xml,csl source ~/.vim/scripts/closetag.vim
 	" Remember positions in files with some Git-specific exceptions.
 	autocmd BufReadPost *
 	  \ if line("'\"") > 0 && line("'\"") <= line("$")
