@@ -98,7 +98,7 @@ if has("autocmd")
 	  \   exe "normal! g`\"" |
 	  \ endif
 
-	" No line numbers when viewing help
+	" No line numbers when viewing help.
 	autocmd FileType help set nonumber
 	
 	" Enter selects the current tag and backspace goes back.
