@@ -1,5 +1,9 @@
 let mapleader=","
 
+" Set bash-style autocomplete behaviour.
+set wildmenu
+set wildmode=list:longest
+
 " Basic stuff.
 set encoding=utf-8
 set vb
