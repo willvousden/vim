@@ -12,6 +12,8 @@ set background=dark
 set foldmethod=syntax
 set backspace=indent,eol,start
 set nocompatible
+set modeline
+set modelines=50
 
 set showmatch
 set showmode
@@ -28,7 +30,7 @@ endif
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set noexpandtab
+set expandtab
 
 " Searches and stuff.
 "nnoremap / /\v
@@ -125,7 +127,7 @@ nmap n nzz
 nmap N Nzz
 
 " Easy saving!
-nnoremap <leader>w :w<CR>
+"nnoremap <leader>w :w<CR>
 nnoremap <leader>W :w !sudo tee %<CR>
 
 " Easy selection!
@@ -149,8 +151,9 @@ nnoremap <silent> <C-Right> :call search('\<\<Bar>\u', 'W')<CR>
 inoremap <silent> <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
 inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
 
-" NERDTree stuff.
-autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
+" NERDTree stuff and TagList.
+autocmd VimEnter * nnoremap <silent> <S-Tab> :NERDTreeToggle<CR>
+autocmd VimEnter * nnoremap <silent> <Tab> :Tlist<CR><C-w>=<C-w>h
 "autocmd VimEnter * exe 'NERDTree' | wincmd l
 "autocmd BufEnter * NERDTreeMirror
 
