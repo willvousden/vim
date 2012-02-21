@@ -134,10 +134,10 @@ nnoremap <leader>W :w !sudo tee %<CR>
 nnoremap <leader>A ggVG
 
 " Tab navigation mappings.
-nmap <silent> <C-j> :bN<CR>
-nmap <silent> <C-k> :bn<CR>
-imap <silent> <C-j> <C-o>:bN<CR>
-imap <silent> <C-k> <C-o>:bn<CR>
+nmap <silent> <C-j> :bN!<CR>
+nmap <silent> <C-k> :bn!<CR>
+imap <silent> <C-j> <C-o>:bN!<CR>
+imap <silent> <C-k> <C-o>:bn!<CR>
 
 " Folding mappings.
 nnoremap <silent> <C-LeftMouse> <LeftMouse>za
