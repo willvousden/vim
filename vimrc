@@ -152,8 +152,8 @@ inoremap <silent> <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
 inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
 
 " NERDTree stuff and TagList.
-autocmd VimEnter * nnoremap <silent> <S-Tab> :NERDTreeToggle<CR>
-autocmd VimEnter * nnoremap <silent> <Tab> :Tlist<CR><C-w>=<C-w>h
+autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
+autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR><C-w>=<C-w>h
 "autocmd VimEnter * exe 'NERDTree' | wincmd l
 "autocmd BufEnter * NERDTreeMirror
 
