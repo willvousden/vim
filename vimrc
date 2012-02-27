@@ -126,12 +126,14 @@ endif
 nmap n nzz
 nmap N Nzz
 
-" Easy saving!
-"nnoremap <leader>w :w<CR>
+" Easy saving when lacking sudo permissions!
 nnoremap <leader>W :w !sudo tee %<CR>
 
 " Easy selection!
 nnoremap <leader>A ggVG
+
+" Easy wrap toggling!
+nnoremap <leader>w :set nowrap!<CR>
 
 " Tab navigation mappings.
 nmap <silent> <C-j> :bN!<CR>
