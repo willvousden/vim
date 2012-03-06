@@ -57,6 +57,8 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 " Plugin stuff with Pathogen.
 filetype off
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, "minibufexpl")
 call pathogen#infect()
 
 " Tag stuff.
