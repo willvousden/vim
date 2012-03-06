@@ -57,8 +57,7 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
 " Plugin stuff with Pathogen.
 filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 " Tag stuff.
 let tlist_tex_settings='tex;b:bibitem;c:command;l:label'
