@@ -155,10 +155,12 @@ inoremap <silent> <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
 inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
 
 " NERDTree stuff and TagList.
+let g:gundo_right=1
+let g:NERDTreeWinPos="right"
+let g:Tlist_Use_Right_Window=1
 autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
-autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR><C-w>=<C-w>h
-"autocmd VimEnter * exe 'NERDTree' | wincmd l
-"autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
+autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
 " JavaScript stuff.
 let javaScript_fold=1
