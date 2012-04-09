@@ -42,8 +42,8 @@ set gdefault " Invert global subsitute behaviour.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " Navigation.
-nnoremap j gj
-nnoremap k gk
+map <Up> gk
+map <Down> gj
 map <PageUp> <C-u>
 map <PageDown> <C-d>
 imap <PageUp> <C-o><C-u>
