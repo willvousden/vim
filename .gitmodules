@@ -34,3 +34,6 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/arduino"]
+	path = vim/bundle/arduino
+	url = git://github.com/tclem/vim-arduino.git
