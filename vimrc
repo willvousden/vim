@@ -48,6 +48,8 @@ map <PageUp> <C-u>
 map <PageDown> <C-d>
 imap <PageUp> <C-o><C-u>
 imap <PageDown> <C-o><C-d>
+map <C-m> g;
+map <C-n> g,
 
 " Yank to end of line.
 map <silent> Y y$
