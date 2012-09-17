@@ -6,6 +6,7 @@ set wildmode=list:longest
 
 " Basic stuff.
 set encoding=utf-8
+set hidden
 set vb
 set ai
 set background=dark
@@ -27,6 +28,7 @@ if has("gui_running")
 	colorscheme molokai
 endif
 
+" White space stuff.
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
