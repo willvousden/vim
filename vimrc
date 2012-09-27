@@ -138,6 +138,7 @@ nnoremap <leader>W :w !sudo tee %<CR>
 nnoremap <leader>A ggVG
 
 " Easy wrap toggling!
+set linebreak
 nnoremap <leader>w :set nowrap!<CR>
 
 " Tab navigation mappings.
