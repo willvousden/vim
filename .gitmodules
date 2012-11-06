@@ -40,3 +40,6 @@
 [submodule "vim/bundle/gitolite"]
 	path = vim/bundle/gitolite
 	url = git://github.com/tmatilai/gitolite.vim.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = git://github.com/pangloss/vim-javascript.git
