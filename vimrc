@@ -23,10 +23,6 @@ set cursorline
 set number
 nmap <silent> <leader>l :set list!<CR>
 set listchars=tab:▸·,eol:¬,trail:·,extends:«,precedes:»,nbsp:_
-if has("gui_running")
-	let g:molokai_original=1
-	colorscheme molokai
-endif
 
 " White space stuff.
 set tabstop=4
@@ -85,17 +81,6 @@ if has("vms")
 else
 	" Keep a backup file.
 	set backup
-endif
-
-if has("gui_running")
-	if has("win32") || has("win64")
-		" Assume we're running in portable mode, so disable backups.
-		set nobackup
-		set nowritebackup
-	endif
-	
-	" Disable toolbar.
-	set guioptions-=T
 endif
 
 if has("autocmd")
