@@ -1,4 +1,5 @@
 let mapleader=","
+let maplocalleader="\\"
 
 " Set bash-style autocomplete behaviour.
 set wildmenu
