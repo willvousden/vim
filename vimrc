@@ -60,7 +60,7 @@ set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 filetype off
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, "minibufexpl")
-call add(g:pathogen_disabled, "fugitive")
+"call add(g:pathogen_disabled, "fugitive")
 call pathogen#infect()
 
 " Tag stuff.
