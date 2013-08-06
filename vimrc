@@ -85,8 +85,50 @@ else
 	set backup
 endif
 
+" Formatting options.
+set textwidth=100
+set formatoptions+=c " Auto-wrap comments.
+set formatoptions+=r " Insert comment leader on <Enter> in insert mode.
+set formatoptions+=o " Insert comment leader after "o" or "O"
+set formatoptions+=q " Comment formatting with "gq".
+set formatoptions+=l " Don't break long lines automatically.
+set formatoptions+=j " Remove comment leader from joined lines.
+
+" Status line stuff.
+set statusline=
+set statusline+=\ %n\             " Buffer number
+set statusline+=%{&ff}            " File format
+set statusline+=%y                " File type
+set statusline+=\ %<%F            " Full path
+set statusline+=%m                " Modified flag
+set statusline+=\ fo=%{&fo}       " Formatting options
+set statusline+=%=%5l             " Current line
+set statusline+=/%L               " Total lines
+set statusline+=%4v\              " Virtual column number
+set statusline+=0x%04B\           " Character under cursor
+
+" Set it up to change the status line based on mode.
+set laststatus=2 " Enable status line always.
+if version >= 700
+  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+endif
+
 if has("autocmd")
+	" Enable file type detection.
+	filetype plugin indent on
+
+	" Put these in an autocmd group, so that we can delete them easily.
+	augroup vimrcEx
+	au!
+
+	" For all text files, set 'textwidth' to 80 characters.
+	autocmd FileType text,tex setlocal textwidth=80
+
+	augroup END
+
 	au Filetype html,xml,csl source ~/.vim/scripts/closetag.vim
+
 	" Remember positions in files with some Git-specific exceptions.
 	autocmd BufReadPost *
 	  \ if line("'\"") > 0 && line("'\"") <= line("$")
@@ -103,15 +145,18 @@ if has("autocmd")
 	" Enter selects the current tag and backspace goes back.
 	autocmd FileType help nnoremap <CR> <C-]>
 	autocmd FileType help nnoremap <buffer><BS> <C-T>
-endif
 
-" Stuff for 7.0.3.
-if version >= 703
-	" Automatically enable relative numbering.
-	set relativenumber
-	autocmd BufReadPost * set relativenumber
-	autocmd BufNewFile * set relativenumber
-	autocmd BufWinEnter * set relativenumber
+    " Stuff for 7.0.3.
+    if version >= 703
+        " Automatically enable relative numbering.
+        set relativenumber
+        autocmd BufReadPost * set relativenumber
+        autocmd BufNewFile * set relativenumber
+        autocmd BufWinEnter * set relativenumber
+    endif
+else
+	" Just settle for having normal autoindenting.
+	set autoindent
 endif
 
 " Auto-centre on find!
@@ -177,24 +222,6 @@ inoremap <C-W> <C-G>u<C-W>
 " Enable mouse support.
 if has('mouse')
 	set mouse=a
-endif
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-	" Enable file type detection.
-	filetype plugin indent on
-
-	" Put these in an autocmd group, so that we can delete them easily.
-	augroup vimrcEx
-	au!
-
-	" For all text files, set 'textwidth' to 78 characters.
-	autocmd FileType text setlocal textwidth=78
-
-	augroup END
-else
-	" Just settle for having normal autoindenting.
-	set autoindent
 endif
 
 " Convenient command to see the difference between the current buffer and the
