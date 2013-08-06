@@ -46,3 +46,6 @@
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = git://github.com/sjl/splice.vim.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline

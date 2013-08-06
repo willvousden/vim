@@ -94,25 +94,25 @@ set formatoptions+=q " Comment formatting with "gq".
 set formatoptions+=l " Don't break long lines automatically.
 set formatoptions+=j " Remove comment leader from joined lines.
 
-" Status line stuff.
-set statusline=
-set statusline+=\ %n\             " Buffer number
-set statusline+=%{&ff}            " File format
-set statusline+=%y                " File type
-set statusline+=\ %<%F            " Full path
-set statusline+=%m                " Modified flag
-set statusline+=\ fo=%{&fo}       " Formatting options
-set statusline+=%=%5l             " Current line
-set statusline+=/%L               " Total lines
-set statusline+=%4v\              " Virtual column number
-set statusline+=0x%04B\           " Character under cursor
+"" Status line stuff.
+"set statusline=
+"set statusline+=\ %n\             " Buffer number
+"set statusline+=%{&ff}            " File format
+"set statusline+=%y                " File type
+"set statusline+=\ %<%F            " Full path
+"set statusline+=%m                " Modified flag
+"set statusline+=\ fo=%{&fo}       " Formatting options
+"set statusline+=%=%5l             " Current line
+"set statusline+=/%L               " Total lines
+"set statusline+=%4v\              " Virtual column number
+"set statusline+=0x%04B\           " Character under cursor
 
-" Set it up to change the status line based on mode.
-set laststatus=2 " Enable status line always.
-if version >= 700
-  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
-endif
+"" Set it up to change the status line based on mode.
+"set laststatus=2 " Enable status line always.
+"if version >= 700
+  "au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
+  "au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
+"endif
 
 if has("autocmd")
 	" Enable file type detection.
