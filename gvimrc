@@ -1,5 +1,4 @@
-let g:molokai_original=1
-colorscheme molokai
+set lines=55 columns=160
 
 " Disable toolbar.
 set guioptions-=T

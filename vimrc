@@ -1,5 +1,16 @@
+let g:molokai_original=0
 let mapleader=","
 let maplocalleader="\\"
+
+" Plugin stuff with Pathogen.
+"filetype off
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, "minibufexpl")
+"call add(g:pathogen_disabled, "vim-colors-solarized")
+"call add(g:pathogen_disabled, "fugitive")
+call pathogen#infect()
+
+colorscheme molokai
 
 " Set bash-style autocomplete behaviour.
 set wildmenu
@@ -16,6 +27,11 @@ set backspace=indent,eol,start
 set nocompatible
 set modeline
 set modelines=50
+
+set history=50 " Keep 50 lines of command line history.
+set ruler " Show the cursor position all the time.
+set showcmd " Display incomplete commands.
+set incsearch " Enable incremental searching.
 
 set showmatch
 set showmode
@@ -56,15 +72,6 @@ map <silent> Y y$
 " Session managment.
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
-" Plugin stuff with Pathogen.
-filetype off
-let g:pathogen_disabled = []
-call add(g:pathogen_disabled, "minibufexpl")
-"call add(g:pathogen_disabled, "fugitive")
-call pathogen#infect()
-
-colorscheme molokai
-
 " Tag stuff.
 let tlist_tex_settings='tex;b:bibitem;c:command;l:label'
 
@@ -80,11 +87,11 @@ map <leader>s :source $VIM/.session<CR>:exe ":echo 'Session loaded!'"<CR>
 set dir=/tmp
 set backupdir=/tmp
 if has("vms")
-	" Use versions rather than a backup file.
-	set nobackup
+    " Use versions rather than a backup file.
+    set nobackup
 else
-	" Keep a backup file.
-	set backup
+    " Keep a backup file.
+    set backup
 endif
 
 " Formatting options.
@@ -96,57 +103,40 @@ set formatoptions+=q " Comment formatting with "gq".
 set formatoptions+=l " Don't break long lines automatically.
 set formatoptions+=j " Remove comment leader from joined lines.
 
-"" Status line stuff.
-set laststatus=2 " Enable status line always.
-"set statusline=
-"set statusline+=\ %n\             " Buffer number
-"set statusline+=%{&ff}            " File format
-"set statusline+=%y                " File type
-"set statusline+=\ %<%F            " Full path
-"set statusline+=%m                " Modified flag
-"set statusline+=\ fo=%{&fo}       " Formatting options
-"set statusline+=%=%5l             " Current line
-"set statusline+=/%L               " Total lines
-"set statusline+=%4v\              " Virtual column number
-"set statusline+=0x%04B\           " Character under cursor
-
-"" Set it up to change the status line based on mode.
-"if version >= 700
-  "au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-  "au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
-"endif
+" Always enable status line.
+set laststatus=2
 
 if has("autocmd")
-	" Enable file type detection.
-	filetype plugin indent on
+    " Enable file type detection.
+    filetype plugin indent on
 
-	" Put these in an autocmd group, so that we can delete them easily.
-	augroup vimrcEx
-	au!
+    " Put these in an autocmd group, so that we can delete them easily.
+    augroup vimrcEx
+    au!
 
-	" For all text files, set 'textwidth' to 80 characters.
-	autocmd FileType text,tex setlocal textwidth=80
+    " For all text files, set 'textwidth' to 80 characters.
+    autocmd FileType text,tex setlocal textwidth=80
 
-	augroup END
+    augroup END
 
-	au Filetype html,xml,csl source ~/.vim/scripts/closetag.vim
+    au Filetype html,xml,csl source ~/.vim/scripts/closetag.vim
 
-	" Remember positions in files with some Git-specific exceptions.
-	autocmd BufReadPost *
-	  \ if line("'\"") > 0 && line("'\"") <= line("$")
-	  \           && expand("%") !~ "COMMIT_EDITMSG"
-	  \           && expand("%") !~ "ADD_EDIT.patch"
-	  \           && expand("%") !~ "addp-hunk-edit.diff"
-	  \           && expand("%") !~ "git-rebase-todo" |
-	  \   exe "normal! g`\"" |
-	  \ endif
+    " Remember positions in files with some Git-specific exceptions.
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$")
+        \     && expand("%") !~ "COMMIT_EDITMSG"
+        \     && expand("%") !~ "ADD_EDIT.patch"
+        \     && expand("%") !~ "addp-hunk-edit.diff"
+        \     && expand("%") !~ "git-rebase-todo" |
+        \     exe "normal! g`\"" |
+        \ endif
 
-	" No line numbers when viewing help.
-	autocmd FileType help set nonumber
-	
-	" Enter selects the current tag and backspace goes back.
-	autocmd FileType help nnoremap <CR> <C-]>
-	autocmd FileType help nnoremap <buffer><BS> <C-T>
+    " No line numbers when viewing help.
+    autocmd FileType help set nonumber
+
+    " Enter selects the current tag and backspace goes back.
+    autocmd FileType help nnoremap <CR> <C-]>
+    autocmd FileType help nnoremap <buffer><BS> <C-T>
 
     " Stuff for 7.0.3.
     if version >= 703
@@ -157,8 +147,8 @@ if has("autocmd")
         autocmd BufWinEnter * set relativenumber
     endif
 else
-	" Just settle for having normal autoindenting.
-	set autoindent
+    " Just settle for having normal autoindenting.
+    set autoindent
 endif
 
 " Auto-centre on find!
@@ -208,14 +198,9 @@ autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 " Switch on syntax and search pattern highlighting when the terminal has
 " colour support.
 if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
+    syntax on
+    set hlsearch
 endif
-
-set history=50 " Keep 50 lines of command line history.
-set ruler " Show the cursor position all the time.
-set showcmd " Display incomplete commands.
-set incsearch " Enable incremental searching.
 
 " When deleting lines or words, insert an undo break first to avoid loss.
 inoremap <C-U> <C-G>u<C-U>
@@ -223,13 +208,13 @@ inoremap <C-W> <C-G>u<C-W>
 
 " Enable mouse support.
 if has('mouse')
-	set mouse=a
+    set mouse=a
 endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.  Only define it when not
 " defined already.
 if !exists(":DiffOrig")
-	command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-	  \ | wincmd p | diffthis
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+        \ | wincmd p | diffthis
 endif
