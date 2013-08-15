@@ -56,6 +56,9 @@ set ignorecase
 set gdefault " Invert global subsitute behaviour.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+" Paste mode shortcut.
+nnoremap <silent> <leader>p :set paste!<CR>
+
 " Navigation.
 map <Up> gk
 map <Down> gj
