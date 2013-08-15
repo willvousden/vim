@@ -99,12 +99,15 @@ endif
 
 " Formatting options.
 set textwidth=100
+set formatoptions-=t
 set formatoptions+=c " Auto-wrap comments.
 set formatoptions+=r " Insert comment leader on <Enter> in insert mode.
 set formatoptions+=o " Insert comment leader after "o" or "O"
 set formatoptions+=q " Comment formatting with "gq".
 set formatoptions+=l " Don't break long lines automatically.
-set formatoptions+=j " Remove comment leader from joined lines.
+if version >= 703
+    set formatoptions+=j " Remove comment leader from joined lines.
+endif
 
 " Always enable status line.
 set laststatus=2
@@ -118,7 +121,7 @@ if has("autocmd")
     au!
 
     " For all text files, set 'textwidth' to 80 characters.
-    autocmd FileType text,tex setlocal textwidth=80
+    autocmd FileType text,tex setlocal textwidth=80 formatoptions+=t
 
     augroup END
 
