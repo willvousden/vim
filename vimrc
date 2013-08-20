@@ -66,8 +66,12 @@ map <PageUp> <C-u>
 map <PageDown> <C-d>
 imap <PageUp> <C-o><C-u>
 imap <PageDown> <C-o><C-d>
-nmap <C-m> g;
+nmap <C-b> g;
 nmap <C-n> g,
+
+" Disable automatic jump to next result on word search.
+nnoremap * /\<<C-r><C-w>\><CR>N
+nnoremap # ?\<<C-r><C-w>\><CR>N
 
 " Yank to end of line.
 map <silent> Y y$
@@ -158,8 +162,8 @@ else
 endif
 
 " Auto-centre on find!
-nmap n nzz
-nmap N Nzz
+nnoremap n nzz
+nnoremap N Nzz
 
 " Easy saving when lacking sudo permissions!
 nnoremap <leader>W :w !sudo tee %<CR>
