@@ -161,10 +161,6 @@ else
     set autoindent
 endif
 
-" Auto-centre on find!
-nnoremap n nzz
-nnoremap N Nzz
-
 " Easy saving when lacking sudo permissions!
 nnoremap <leader>W :w !sudo tee %<CR>
 
