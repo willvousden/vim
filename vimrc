@@ -5,6 +5,7 @@ let maplocalleader="\\"
 " Plugin stuff with Pathogen.
 "filetype off
 let g:pathogen_disabled = []
+let g:space_no_search = 1
 call add(g:pathogen_disabled, "minibufexpl")
 "call add(g:pathogen_disabled, "vim-colors-solarized")
 "call add(g:pathogen_disabled, "fugitive")
@@ -70,8 +71,14 @@ nmap <C-b> g;
 nmap <C-n> g,
 
 " Disable automatic jump to next result on word search.
-nnoremap * /\<<C-r><C-w>\><CR>N
-nnoremap # ?\<<C-r><C-w>\><CR>N
+nmap <silent> * /\<<C-r><C-w>\><CR>N
+nmap <silent> # ?\<<C-r><C-w>\><CR>N
+
+" Replace word under cursor.
+nmap <leader>S %s/\<<C-r><C-w>\>/
+
+" Search for selection.
+vmap <leader>s y/<C-r>"<CR>
 
 " Yank to end of line.
 map <silent> Y y$
@@ -88,7 +95,7 @@ map <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimr
 
 " Mappings for session managment.
 map <leader>q :mksession! $VIM/.session<CR>:exe ":echo 'Session saved!'"<CR>
-map <leader>s :source $VIM/.session<CR>:exe ":echo 'Session loaded!'"<CR>
+map <leader>Q :source $VIM/.session<CR>:exe ":echo 'Session loaded!'"<CR>
 
 " Set backup and history things.
 set dir=/tmp
