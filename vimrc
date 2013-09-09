@@ -48,6 +48,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" FIXME Verify this!
+autocmd BufReadPost * let [&tabstop, &softtabstop] = [&shiftwidth, &shiftwidth]
+
 " Searches and stuff.
 "nnoremap / /\v
 "vnoremap / /\v
