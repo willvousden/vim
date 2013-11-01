@@ -1,4 +1,8 @@
 set lines=55 columns=160
 
-" Disable toolbar.
+" Disable toolbar and scrollbars.
 set guioptions-=T
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
