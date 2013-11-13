@@ -11,8 +11,6 @@ call add(g:pathogen_disabled, "minibufexpl")
 "call add(g:pathogen_disabled, "fugitive")
 call pathogen#infect()
 
-colorscheme molokai
-
 " Set bash-style autocomplete behaviour.
 set wildmenu
 set wildmode=list:longest
@@ -216,6 +214,11 @@ autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
+
+    " Only set a nice colour scheme if the term supports it.
+    if &t_Co == 256
+        colorscheme molokai
+    endif
 endif
 
 " When deleting lines or words, insert an undo break first to avoid loss.
