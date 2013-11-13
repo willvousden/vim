@@ -216,7 +216,7 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch
 
     " Only set a nice colour scheme if the term supports it.
-    if &t_Co == 256
+    if &t_Co == 256 || has("gui_running")
         colorscheme molokai
     endif
 endif
