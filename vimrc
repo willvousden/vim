@@ -76,7 +76,7 @@ nmap <silent> * /\<<C-r><C-w>\><CR>N
 nmap <silent> # ?\<<C-r><C-w>\><CR>N
 
 " Replace word under cursor.
-nmap <leader>S %s/\<<C-r><C-w>\>/
+nmap <leader>S :%s/\<<C-r><C-w>\>/
 
 " Search for selection.
 vmap <leader>s y/<C-r>"<CR>
