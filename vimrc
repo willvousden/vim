@@ -2,14 +2,36 @@ let g:molokai_original=0
 let mapleader=","
 let maplocalleader="\\"
 
-" Plugin stuff with Pathogen.
-"filetype off
-let g:pathogen_disabled = []
-let g:space_no_search = 1
-call add(g:pathogen_disabled, "minibufexpl")
-"call add(g:pathogen_disabled, "vim-colors-solarized")
-"call add(g:pathogen_disabled, "fugitive")
-call pathogen#infect()
+" Vundle stuff.
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Plugin 'gmarik/vundle'
+
+" Which plugins do we want?
+Plugin 'willvousden/vim-finesse'
+Plugin 'sukima/xmledit'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'bling/vim-airline'
+Plugin 'sjl/splice.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tmatilai/gitolite.vim'
+Plugin 'tclem/vim-arduino'
+Plugin 'sjl/gundo.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'tpope/vim-git'
+Plugin 'sontek/minibufexpl.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'IndentAnything'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'spiiph/vim-space'
+Plugin 'tpope/vim-surround'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+
+filetype plugin indent on
 
 " Set bash-style autocomplete behaviour.
 set wildmenu
@@ -23,7 +45,6 @@ set ai
 set background=dark
 set foldmethod=syntax
 set backspace=indent,eol,start
-set nocompatible
 set modeline
 set modelines=50
 
