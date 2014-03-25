@@ -31,14 +31,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 if version < 704
-    Bundle 'JulesWang/css.vim'
+    Plugin 'JulesWang/css.vim'
 else
-    Bundle 'cakebaker/scss-syntax.vim'
+    Plugin 'cakebaker/scss-syntax.vim'
 end
-Bundle "lepture/vim-jinja"
-Bundle "taglist.vim"
-Bundle "matchit.zip"
-Bundle "jpythonfold.vim"
+Plugin "lepture/vim-jinja"
+Plugin "taglist.vim"
+Plugin "matchit.zip"
+Plugin "jpythonfold.vim"
 
 filetype plugin indent on
 
