@@ -36,7 +36,8 @@ else
     Bundle 'cakebaker/scss-syntax.vim'
 end
 Bundle "lepture/vim-jinja"
-
+Bundle "taglist.vim"
+Bundle "matchit.zip"
 
 filetype plugin indent on
 
