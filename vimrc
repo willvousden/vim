@@ -35,6 +35,7 @@ if version < 704
 else
     Bundle 'cakebaker/scss-syntax.vim'
 end
+Bundle "lepture/vim-jinja"
 
 
 filetype plugin indent on
