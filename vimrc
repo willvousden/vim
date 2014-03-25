@@ -38,6 +38,7 @@ end
 Bundle "lepture/vim-jinja"
 Bundle "taglist.vim"
 Bundle "matchit.zip"
+Bundle "jpythonfold.vim"
 
 filetype plugin indent on
 
