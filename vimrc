@@ -30,6 +30,12 @@ Plugin 'spiiph/vim-space'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
+if version < 704
+    Bundle 'JulesWang/css.vim'
+else
+    Bundle 'cakebaker/scss-syntax.vim'
+end
+
 
 filetype plugin indent on
 
