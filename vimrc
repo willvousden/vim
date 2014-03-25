@@ -7,7 +7,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Plugin 'gmarik/vundle'
+"Plugin 'gmarik/vundle'
 
 " Which plugins do we want?
 Plugin 'willvousden/vim-finesse'
@@ -35,10 +35,10 @@ if version < 704
 else
     Plugin 'cakebaker/scss-syntax.vim'
 end
-Plugin "lepture/vim-jinja"
-Plugin "taglist.vim"
-Plugin "matchit.zip"
-Plugin "jpythonfold.vim"
+Plugin 'lepture/vim-jinja'
+Plugin 'taglist.vim'
+Plugin 'matchit.zip'
+Plugin 'jpythonfold.vim'
 
 filetype plugin indent on
 
