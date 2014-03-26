@@ -1,4 +1,3 @@
-let g:molokai_original=0
 let mapleader=","
 let maplocalleader="\\"
 
@@ -12,14 +11,34 @@ call vundle#rc()
 " Which plugins do we want?
 Plugin 'willvousden/vim-finesse'
 Plugin 'sukima/xmledit'
+
+" Colours...
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
+let g:molokai_original=0
+if &t_Co == 256 || has("gui_running")
+    " Only set a nice colour scheme if the term supports it.
+    colorscheme molokai
+endif
+
 Plugin 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled=1
+
+" NERDTree stuff and TagList.
+Plugin 'scrooloose/nerdtree'
+Plugin 'taglist.vim'
+Plugin 'sjl/gundo.vim'
+let g:gundo_right=1
+let g:NERDTreeWinPos="right"
+let g:Tlist_Use_Right_Window=1
+autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
+autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
+autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
+
 Plugin 'sjl/splice.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tmatilai/gitolite.vim'
 Plugin 'tclem/vim-arduino'
-Plugin 'sjl/gundo.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'tpope/vim-git'
 "Plugin 'sontek/minibufexpl.vim'
@@ -29,14 +48,12 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'spiiph/vim-space'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
 if version < 704
     Plugin 'JulesWang/css.vim'
 else
     Plugin 'cakebaker/scss-syntax.vim'
 end
 Plugin 'lepture/vim-jinja'
-Plugin 'taglist.vim'
 Plugin 'matchit.zip'
 Plugin 'jpythonfold.vim'
 
@@ -227,14 +244,6 @@ nnoremap <silent> <C-Right> :call search('\<\<Bar>\u', 'W')<CR>
 inoremap <silent> <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
 inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
 
-" NERDTree stuff and TagList.
-let g:gundo_right=1
-let g:NERDTreeWinPos="right"
-let g:Tlist_Use_Right_Window=1
-autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
-autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
-autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
-
 " JavaScript stuff.
 let javaScript_fold=1
 autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
@@ -244,11 +253,6 @@ autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
-
-    " Only set a nice colour scheme if the term supports it.
-    if &t_Co == 256 || has("gui_running")
-        colorscheme molokai
-    endif
 endif
 
 " When deleting lines or words, insert an undo break first to avoid loss.
