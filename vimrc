@@ -35,10 +35,19 @@ autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
 autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
 autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
-Plugin 'sjl/splice.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tmatilai/gitolite.vim'
+" Syntax plugins.
+Plugin 'SimpylFold'
 Plugin 'tclem/vim-arduino'
+Plugin 'pangloss/vim-javascript'
+Plugin 'lepture/vim-jinja'
+if version < 704
+    Plugin 'JulesWang/css.vim'
+else
+    Plugin 'cakebaker/scss-syntax.vim'
+end
+
+Plugin 'sjl/splice.vim'
+Plugin 'tmatilai/gitolite.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'tpope/vim-git'
 "Plugin 'sontek/minibufexpl.vim'
@@ -48,14 +57,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'spiiph/vim-space'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
-if version < 704
-    Plugin 'JulesWang/css.vim'
-else
-    Plugin 'cakebaker/scss-syntax.vim'
-end
-Plugin 'lepture/vim-jinja'
 Plugin 'matchit.zip'
-Plugin 'jpythonfold.vim'
 
 filetype plugin indent on
 
