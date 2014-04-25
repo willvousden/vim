@@ -46,18 +46,21 @@ else
     Plugin 'cakebaker/scss-syntax.vim'
 end
 
+" Convenience plugins.
+let g:space_no_search = 1
+Plugin 'spiiph/vim-space'
+Plugin 'ervandew/supertab'
+Plugin 'IndentAnything'
+Plugin 'matchit.zip'
+
 Plugin 'sjl/splice.vim'
 Plugin 'tmatilai/gitolite.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'tpope/vim-git'
 "Plugin 'sontek/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'IndentAnything'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'spiiph/vim-space'
 Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
-Plugin 'matchit.zip'
 
 filetype plugin indent on
 
