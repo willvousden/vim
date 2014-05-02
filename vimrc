@@ -9,8 +9,6 @@ call vundle#rc()
 "Plugin 'gmarik/vundle'
 
 " Which plugins do we want?
-Plugin 'willvousden/vim-finesse'
-Plugin 'sukima/xmledit'
 
 " Colours...
 Plugin 'altercation/vim-colors-solarized'
@@ -36,6 +34,7 @@ autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
 autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
 " Syntax plugins.
+Plugin 'willvousden/vim-finesse'
 Plugin 'zaiste/tmux.vim'
 Plugin 'SimpylFold'
 Plugin 'tclem/vim-arduino'
@@ -53,6 +52,7 @@ Plugin 'spiiph/vim-space'
 Plugin 'ervandew/supertab'
 Plugin 'IndentAnything'
 Plugin 'matchit.zip'
+Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'sjl/splice.vim'
 Plugin 'tmatilai/gitolite.vim'
@@ -62,6 +62,7 @@ Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
+Plugin 'sukima/xmledit'
 
 filetype plugin indent on
 
@@ -109,7 +110,7 @@ set magic
 set smartcase
 set ignorecase
 set gdefault " Invert global subsitute behaviour.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <leader>k :nohl<CR><C-l>
 
 " Paste mode shortcut.
 nnoremap <silent> <leader>p :set paste!<CR>
@@ -232,11 +233,11 @@ nnoremap <leader>A ggVG
 set linebreak
 nnoremap <leader>w :set nowrap!<CR>
 
-" Tab navigation mappings.
-nmap <silent> <C-j> :bN!<CR>
-nmap <silent> <C-k> :bn!<CR>
-imap <silent> <C-j> <C-o>:bN!<CR>
-imap <silent> <C-k> <C-o>:bn!<CR>
+"" Tab navigation mappings.
+"nmap <silent> <C-j> :bN!<CR>
+"nmap <silent> <C-k> :bn!<CR>
+"imap <silent> <C-j> <C-o>:bN!<CR>
+"imap <silent> <C-k> <C-o>:bn!<CR>
 
 " Folding mappings.
 nnoremap <silent> <C-LeftMouse> <LeftMouse>za
