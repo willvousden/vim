@@ -36,6 +36,7 @@ autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
 autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
 " Syntax plugins.
+Plugin 'zaiste/tmux.vim'
 Plugin 'SimpylFold'
 Plugin 'tclem/vim-arduino'
 Plugin 'pangloss/vim-javascript'
