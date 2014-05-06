@@ -16,11 +16,11 @@ Plugin 'tomasr/molokai'
 let g:molokai_original=0
 if &t_Co == 256 || has("gui_running")
     " Only set a nice colour scheme if the term supports it.
-    colorscheme molokai
+    colorscheme solarized
 endif
 
 Plugin 'bling/vim-airline'
-let g:airline#extensions#tabline#enabled=1
+Plugin 'bling/vim-bufferline'
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
