@@ -14,13 +14,20 @@ call vundle#rc()
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 let g:molokai_original=0
-if &t_Co == 256 || has("gui_running")
-    " Only set a nice colour scheme if the term supports it.
-    colorscheme solarized
+if &t_Co > 2 || has("gui_running")
+    "syntax on
+    set hlsearch
+    if &t_Co > 16 || has("gui_running")
+        " Only set a nice colour scheme if the term supports it.
+        colorscheme solarized
+    endif
 endif
 
+let g:airline#extensions#tmuxline#enabled = 1
+let g:tmuxline_powerline_separators = 0
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
+Plugin 'edkolev/tmuxline.vim'
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
@@ -255,16 +262,10 @@ inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
 let javaScript_fold=1
 autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 
-" Switch on syntax and search pattern highlighting when the terminal has
-" colour support.
-if &t_Co > 2 || has("gui_running")
-    syntax on
-    set hlsearch
-endif
-
 " When deleting lines or words, insert an undo break first to avoid loss.
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
+
 
 " Enable mouse support.
 if has('mouse')
