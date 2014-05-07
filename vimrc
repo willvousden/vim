@@ -15,7 +15,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 let g:molokai_original=0
 if &t_Co > 2 || has("gui_running")
-    "syntax on
+    syntax on
     set hlsearch
     if &t_Co > 16 || has("gui_running")
         " Only set a nice colour scheme if the term supports it.
