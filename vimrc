@@ -25,6 +25,8 @@ endif
 
 let g:airline#extensions#tmuxline#enabled = 1
 let g:tmuxline_powerline_separators = 0
+let g:tmuxline_theme = "airline"
+let g:tmuxline_preset = "full"
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'edkolev/tmuxline.vim'
@@ -156,8 +158,8 @@ map <leader>v :sp<CR>:e $MYVIMRC<CR><C-w>_
 map <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Mappings for session managment.
-map <leader>q :mksession! $VIM/.session<CR>:exe ":echo 'Session saved!'"<CR>
-map <leader>Q :source $VIM/.session<CR>:exe ":echo 'Session loaded!'"<CR>
+map <leader>q :mksession! $HOME/.vimsession<CR>:exe ":echo 'Session saved!'"<CR>
+map <leader>Q :source $HOME/.vimsession<CR>:exe ":echo 'Session loaded!'"<CR>
 
 " Set backup and history things.
 set dir=/tmp
