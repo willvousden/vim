@@ -141,8 +141,9 @@ nmap <silent> # ?\<<C-r><C-w>\><CR>N
 " Replace word under cursor.
 nmap <leader>S :%s/\<<C-r><C-w>\>/
 
-" Search for selection.
+" Search for/replace selection.
 vmap <leader>s y/<C-r>"<CR>
+vmap <leader>S y:%s/<C-r>"/
 
 " Yank to end of line.
 map <silent> Y y$
