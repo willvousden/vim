@@ -4,24 +4,15 @@ let maplocalleader="\\"
 " Vundle stuff.
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-"Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
 " Which plugins do we want?
 
 " Colours...
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
-let g:molokai_original=0
-if &t_Co > 2 || has("gui_running")
-    syntax on
-    set hlsearch
-    if &t_Co > 16 || has("gui_running")
-        " Only set a nice colour scheme if the term supports it.
-        colorscheme solarized
-    endif
-endif
 
 let g:airline#extensions#tmuxline#enabled = 1
 let g:tmuxline_powerline_separators = 0
@@ -73,7 +64,19 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'sukima/xmledit'
 
+call vundle#end()
 filetype plugin indent on
+
+" Colours (has to be done after vundle#end()).
+let g:molokai_original=0
+if &t_Co > 2 || has("gui_running")
+    syntax on
+    set hlsearch
+    if &t_Co > 16 || has("gui_running")
+        " Only set a nice colour scheme if the term supports it.
+        colorscheme solarized
+    endif
+endif
 
 " Set bash-style autocomplete behaviour.
 set wildmenu
