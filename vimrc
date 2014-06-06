@@ -151,6 +151,9 @@ vmap <leader>S y:%s/<C-r>"/
 " Yank to end of line.
 map <silent> Y y$
 
+" Send previus yank to clipboard (via Clipper).
+nmap <leader>y :call system('clipnc localhost 8378', @0)<CR>
+
 " Session managment.
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
 
