@@ -29,9 +29,6 @@ Plugin 'sjl/gundo.vim'
 let g:gundo_right=1
 let g:NERDTreeWinPos="right"
 let g:Tlist_Use_Right_Window=1
-autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
-autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
-autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
 " Syntax plugins.
 Plugin 'tmatilai/gitolite.vim'
@@ -109,9 +106,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" FIXME Verify this!
-autocmd BufReadPost * let [&tabstop, &softtabstop] = [&shiftwidth, &shiftwidth]
-
 " Searches and stuff.
 "nnoremap / /\v
 "vnoremap / /\v
@@ -185,20 +179,25 @@ endif
 " Always enable status line.
 set laststatus=2
 
-if has("autocmd")
-    " Enable file type detection.
-    filetype plugin indent on
+if has("autocmd") && !exists("autocommands_loaded")
+    let autocommands_loaded = 1
 
-    " Put these in an autocmd group, so that we can delete them easily.
-    augroup vimrcEx
-    au!
+    " FIXME Verify this!
+    autocmd BufReadPost * let [&tabstop, &softtabstop] = [&shiftwidth, &shiftwidth]
+
+    " JavaScript stuff.
+    let javaScript_fold=1
+    autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
+
+    " Sidebar mappings.
+    autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
+    autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
+    autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
     " For all text files, set 'textwidth' to 80 characters.
     autocmd FileType text,tex setlocal textwidth=80 formatoptions+=t
 
-    augroup END
-
-    au Filetype html,xml,csl source ~/.vim/scripts/closetag.vim
+    autocmd Filetype html,xml,csl source ~/.vim/scripts/closetag.vim
 
     " Remember positions in files with some Git-specific exceptions.
     autocmd BufReadPost *
@@ -257,10 +256,6 @@ nnoremap <silent> <C-Left> :call search('\<\<Bar>\u', 'bW')<CR>
 nnoremap <silent> <C-Right> :call search('\<\<Bar>\u', 'W')<CR>
 inoremap <silent> <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
 inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
-
-" JavaScript stuff.
-let javaScript_fold=1
-autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 
 " When deleting lines or words, insert an undo break first to avoid loss.
 inoremap <C-U> <C-G>u<C-U>
