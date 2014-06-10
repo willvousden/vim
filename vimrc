@@ -79,8 +79,8 @@ set wildmode=list:longest
 " Basic stuff.
 set encoding=utf-8
 set hidden
-set vb
-set ai
+set visualbell
+set autoindent
 set background=dark
 set foldmethod=syntax
 set backspace=indent,eol,start
@@ -143,7 +143,7 @@ vmap <leader>S y:%s/<C-r>"/
 map <silent> Y y$
 
 " Send previus yank to clipboard (via Clipper).
-nmap <leader>y :call system('clip', @0)<CR>
+nmap <leader>y :call system('clip', @0)<CR>:exe ":echo 'Anonymous buffer sent to Clipper.'"<CR>
 
 " Session managment.
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
@@ -224,9 +224,6 @@ if has("autocmd") && !exists("autocommands_loaded")
         autocmd BufNewFile * set relativenumber
         autocmd BufWinEnter * set relativenumber
     endif
-else
-    " Just settle for having normal autoindenting.
-    set autoindent
 endif
 
 " Easy saving when lacking sudo permissions!
