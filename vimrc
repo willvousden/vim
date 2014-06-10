@@ -34,10 +34,9 @@ autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
 autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
 " Syntax plugins.
-Plugin 'willvousden/vim-finesse'
+Plugin 'tmatilai/gitolite.vim'
 Plugin 'zaiste/tmux.vim'
 Plugin 'SimpylFold'
-Plugin 'tclem/vim-arduino'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lepture/vim-jinja'
 if version < 704
@@ -55,10 +54,8 @@ Plugin 'matchit.zip'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'sjl/splice.vim'
-Plugin 'tmatilai/gitolite.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'tpope/vim-git'
-"Plugin 'sontek/minibufexpl.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
@@ -171,13 +168,7 @@ map <leader>Q :source $HOME/.vimsession<CR>:exe ":echo 'Session loaded!'"<CR>
 " Set backup and history things.
 set dir=/tmp
 set backupdir=/tmp
-if has("vms")
-    " Use versions rather than a backup file.
-    set nobackup
-else
-    " Keep a backup file.
-    set backup
-endif
+set backup
 
 " Formatting options.
 set textwidth=100
