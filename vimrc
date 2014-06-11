@@ -83,6 +83,7 @@ set visualbell
 set autoindent
 set background=dark
 set foldmethod=syntax
+set foldopen-=block
 set backspace=indent,eol,start
 set modeline
 set modelines=50
