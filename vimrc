@@ -51,12 +51,16 @@ Plugin 'matchit.zip'
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'sjl/splice.vim'
-Plugin 'msanders/snipmate.vim'
 Plugin 'tpope/vim-git'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'sukima/xmledit'
+
+" Snippet stuff.
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 call vundle#end()
 filetype plugin indent on
