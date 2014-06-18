@@ -66,11 +66,12 @@ call vundle#end()
 filetype plugin indent on
 
 " Colours (has to be done after vundle#end()).
+set background=dark
 let g:molokai_original=0
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
-    if &t_Co > 16 || has("gui_running")
+    if &t_Co >= 16 || has("gui_running")
         " Only set a nice colour scheme if the term supports it.
         colorscheme solarized
     endif
@@ -85,7 +86,6 @@ set encoding=utf-8
 set hidden
 set visualbell
 set autoindent
-set background=dark
 set foldmethod=syntax
 set foldopen-=block
 set backspace=indent,eol,start
