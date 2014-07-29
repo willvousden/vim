@@ -18,6 +18,7 @@ let g:airline#extensions#tmuxline#enabled = 1
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_theme = "airline"
 let g:tmuxline_preset = "full"
+let g:bufferline_rotate = 0
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'edkolev/tmuxline.vim'
