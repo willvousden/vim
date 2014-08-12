@@ -32,8 +32,10 @@ let g:NERDTreeWinPos="right"
 let g:Tlist_Use_Right_Window=1
 
 " Syntax plugins.
+Plugin 'jquery'
 Plugin 'tmatilai/gitolite.vim'
 Plugin 'zaiste/tmux.vim'
+Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'SimpylFold'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lepture/vim-jinja'
@@ -203,8 +205,6 @@ if has("autocmd") && !exists("autocommands_loaded")
 
     " For all text files, set 'textwidth' to 80 characters.
     autocmd FileType text,tex setlocal textwidth=80 formatoptions+=t
-
-    autocmd Filetype html,xml,csl source ~/.vim/scripts/closetag.vim
 
     " Remember positions in files with some Git-specific exceptions.
     autocmd BufReadPost *
