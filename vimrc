@@ -32,6 +32,8 @@ let g:NERDTreeWinPos="right"
 let g:Tlist_Use_Right_Window=1
 
 " Syntax plugins.
+Plugin 'nginx.vim'
+au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 Plugin 'jquery'
 Plugin 'tmatilai/gitolite.vim'
 Plugin 'zaiste/tmux.vim'
