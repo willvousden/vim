@@ -183,7 +183,7 @@ set formatoptions+=r " Insert comment leader on <Enter> in insert mode.
 set formatoptions+=o " Insert comment leader after "o" or "O"
 set formatoptions+=q " Comment formatting with "gq".
 set formatoptions+=l " Don't break long lines automatically.
-if version >= 703
+if has('patch-7.3.541')
     set formatoptions+=j " Remove comment leader from joined lines.
 endif
 
