@@ -1,3 +1,14 @@
+" Make this configuration portable...
+
+" Set system default runtime path.
+let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+
+" Detect where this vim config is (resolving symlinks).
+let s:portable = fnamemodify(resolve(expand('<sfile>')), ':p:h')
+
+" Now set runtime path accordingly.
+let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+
 let mapleader=","
 let maplocalleader="\\"
 
