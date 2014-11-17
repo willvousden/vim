@@ -11,9 +11,9 @@ dotfiles:
 
 update_vundle: install_vundle
 	cd `pwd`/bundle/Vundle.vim && git pull;
-	vim -u `pwd`/vimrc +PluginUpdate
+	vim -u `pwd`/vimrc +PluginUpdate +qall
 
-install_vundle: install_vundle
+install_vundle: 
 	[ -e `pwd`/bundle/Vundle.vim ] || git clone $(VUNDLE) `pwd`/bundle/Vundle.vim
 	vim -u `pwd`/vimrc +PluginInstall +qall
 
