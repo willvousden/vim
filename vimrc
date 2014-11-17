@@ -69,6 +69,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'sjl/splice.vim'
 Plugin 'tpope/vim-git'
+Plugin 'airblade/vim-gitgutter'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
@@ -94,6 +95,10 @@ if &t_Co > 2 || has("gui_running")
         silent! colorscheme solarized
     endif
 endif
+
+" Fix buggy colours in gitgutter.
+hi clear SignColumn
+call gitgutter#highlight#define_highlights()
 
 " Set bash-style autocomplete behaviour.
 set wildmenu
