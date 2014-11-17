@@ -1,13 +1,12 @@
 " Make this configuration portable...
-
 " Set system default runtime path.
 let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
 
 " Detect where this vim config is (resolving symlinks).
-let s:portable = fnamemodify(resolve(expand('<sfile>')), ':p:h')
+let g:portable = fnamemodify(resolve(expand('<sfile>')), ':p:h')
 
 " Now set runtime path accordingly.
-let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+let &runtimepath = printf('%s,%s,%s/after', g:portable, &runtimepath, g:portable)
 
 let mapleader=","
 let maplocalleader="\\"
@@ -15,8 +14,9 @@ let maplocalleader="\\"
 " Vundle stuff.
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+let s:vundle = printf('%s/bundle', g:portable)
+let &runtimepath = printf('%s,%s/Vundle.vim', &runtimepath, s:vundle)
+call vundle#begin(s:vundle)
 Plugin 'gmarik/Vundle.vim'
 
 " Which plugins do we want?
@@ -90,7 +90,7 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch
     if &t_Co >= 16 || has("gui_running")
         " Only set a nice colour scheme if the term supports it.
-        colorscheme solarized
+        silent! colorscheme solarized
     endif
 endif
 
