@@ -17,7 +17,7 @@ filetype off
 let s:vundle = printf('%s/bundle', g:portable)
 let &runtimepath = printf('%s,%s/Vundle.vim', &runtimepath, s:vundle)
 call vundle#begin(s:vundle)
-Plugin 'gmarik/Vundle.vim'
+Plugin 'willvousden/Vundle.vim'
 
 " Which plugins do we want?
 
