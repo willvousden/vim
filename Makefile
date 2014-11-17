@@ -6,7 +6,6 @@ all: dotfiles install_vundle
 
 dotfiles:
 	@ln -snfv `pwd`/vimrc ${HOME}/.vimrc
-	@ln -snfv `pwd` ${HOME}/.vim
 
 update_vundle: install_vundle
 	cd `pwd`/bundle/Vundle.vim && git pull
