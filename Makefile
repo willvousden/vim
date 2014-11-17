@@ -1,4 +1,4 @@
-default: dotfiles
+default: all
 
 SHELL := /bin/bash
 VUNDLE = git@github.com:willvousden/Vundle.vim.git
