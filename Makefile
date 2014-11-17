@@ -10,3 +10,4 @@ dotfiles:
 
 clone_vundle:
 	git clone git@github.com:gmarik/Vundle.vim.git `pwd`/bundle/Vundle.vim
+	vim +PluginInstall +qall
