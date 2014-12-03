@@ -147,6 +147,9 @@ nnoremap <silent> <leader>k :nohl<CR><C-l>
 " Paste mode shortcut.
 nnoremap <silent> <leader>p :set paste!<CR>
 
+" Disable annoying ex mode key.
+nnoremap Q <nop>
+
 " Navigation.
 map <Up> gk
 map <Down> gj
