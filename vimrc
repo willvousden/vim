@@ -150,6 +150,7 @@ nnoremap <silent> <leader>k :nohl<CR><C-l>
 
 " Paste mode shortcut.
 nnoremap <silent> <leader>p :set paste!<CR>
+set pastetoggle=<F6>
 
 " Disable annoying ex mode key.
 nnoremap Q <nop>
