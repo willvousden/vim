@@ -135,6 +135,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" More intuitive split behaviour.
+set splitbelow
+set splitright
+
 " Searches and stuff.
 "nnoremap / /\v
 "vnoremap / /\v
