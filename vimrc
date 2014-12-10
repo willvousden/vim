@@ -126,8 +126,10 @@ set showmode
 set scrolloff=3
 set cursorline
 set number
-nmap <silent> <leader>l :set list!<CR>
 set listchars=tab:▸·,eol:¬,trail:·,extends:«,precedes:»,nbsp:_
+
+nmap <silent> <leader>u :syntax sync fromstart<CR>:redraw!<CR>
+nmap <silent> <leader>l :set list!<CR>
 
 " White space stuff.
 set tabstop=4
