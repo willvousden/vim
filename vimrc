@@ -21,6 +21,9 @@ Plugin 'willvousden/Vundle.vim'
 
 " Which plugins do we want?
 
+" Local vimrc files.
+Plugin 'embear/vim-localvimrc'
+
 " Colours...
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
