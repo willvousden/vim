@@ -26,7 +26,6 @@ Plugin 'embear/vim-localvimrc'
 
 " Colours...
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
 
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
