@@ -301,9 +301,14 @@ inoremap <C-W> <C-G>u<C-W>
 " Enable mouse support.
 if has('mouse')
     set mouse=a
-    if &term =~ '^screen'
-        " Enable better mouse support.
-        set ttymouse=xterm2
+    if has('mouse_sgr')
+        " Enable mouse past 223 columns!
+        set ttymouse=sgr
+    else
+        if &term =~ '^screen'
+            " Enable better mouse support.
+            set ttymouse=xterm2
+        endif
     endif
 endif
 
