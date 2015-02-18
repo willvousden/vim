@@ -27,16 +27,16 @@ Plugin 'embear/vim-localvimrc'
 " Colours...
 Plugin 'altercation/vim-colors-solarized'
 
-let g:airline#extensions#tmuxline#enabled = 1
+"let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
-let g:tmuxline_powerline_separators = 0
-let g:tmuxline_theme = "airline"
-let g:tmuxline_preset = "full"
+"let g:tmuxline_powerline_separators = 0
+"let g:tmuxline_theme = "airline"
+"let g:tmuxline_preset = "full"
 let g:bufferline_rotate = 1
 let g:bufferline_fixed_index = -1
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
-Plugin 'edkolev/tmuxline.vim'
+"Plugin 'edkolev/tmuxline.vim'
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
