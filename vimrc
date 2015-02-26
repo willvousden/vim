@@ -104,8 +104,17 @@ endif
 "call gitgutter#highlight#define_highlights()
 
 " Set bash-style autocomplete behaviour.
-set wildmenu
-set wildmode=list:longest
+if has("wildmenu")
+    set wildmenu
+    set wildmode=longest,list
+    set wildignore+=*.a,*.o
+    set wildignore+=.DS_store,.git,.hg,.svn
+    set wildignore+=*~,*.swp,*.tmp
+
+    if has("wildignore")
+        set wildignorecase
+    endif
+endif
 
 " Basic stuff.
 set encoding=utf-8
