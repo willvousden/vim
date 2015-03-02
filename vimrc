@@ -111,7 +111,7 @@ if has("wildmenu")
     set wildignore+=.DS_store,.git,.hg,.svn
     set wildignore+=*~,*.swp,*.tmp
 
-    if has("wildignore")
+    if has("wildignorecase")
         set wildignorecase
     endif
 endif
