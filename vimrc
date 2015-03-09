@@ -52,6 +52,8 @@ au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 Plugin 'jquery'
 Plugin 'tmatilai/gitolite.vim'
 Plugin 'zaiste/tmux.vim'
+let python_highlight_all=1
+Plugin 'hdima/python-syntax'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'SimpylFold'
 Plugin 'pangloss/vim-javascript'
