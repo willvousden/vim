@@ -34,8 +34,8 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#hunks#non_zero_only = 1
-nmap <expr> <leader>t &stal == 0 ? ':set stal=2<cr>' : ':set stal=0<cr>'
 "let g:tmuxline_powerline_separators = 0
 "let g:tmuxline_theme = "airline"
 "let g:tmuxline_preset = "full"
@@ -44,6 +44,7 @@ nmap <expr> <leader>t &stal == 0 ? ':set stal=2<cr>' : ':set stal=0<cr>'
 Plugin 'bling/vim-airline'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'edkolev/tmuxline.vim'
+nmap <expr> <silent> <leader>t &stal == 0 ? ':set stal=1<cr>' : ':set stal=0<cr>'
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
