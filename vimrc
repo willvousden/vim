@@ -28,14 +28,21 @@ Plugin 'embear/vim-localvimrc'
 Plugin 'altercation/vim-colors-solarized'
 
 "let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#hunks#non_zero_only = 1
+nmap <expr> <leader>t &stal == 0 ? ':set stal=2<cr>' : ':set stal=0<cr>'
 "let g:tmuxline_powerline_separators = 0
 "let g:tmuxline_theme = "airline"
 "let g:tmuxline_preset = "full"
-let g:bufferline_rotate = 1
-let g:bufferline_fixed_index = -1
+"let g:bufferline_rotate = 1
+"let g:bufferline_fixed_index = -1
 Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
+"Plugin 'bling/vim-bufferline'
 "Plugin 'edkolev/tmuxline.vim'
 
 " NERDTree stuff and TagList.
