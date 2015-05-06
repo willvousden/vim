@@ -44,7 +44,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 Plugin 'bling/vim-airline'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'edkolev/tmuxline.vim'
-nmap <expr> <silent> <leader>t &stal == 0 ? ':set stal=1<cr>' : ':set stal=0<cr>'
+nmap <leader>t :let &stal=(&stal + 1) % 3<cr>
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
