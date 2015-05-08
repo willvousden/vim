@@ -84,6 +84,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-git'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+let NERDSpaceDelims = 1
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'sukima/xmledit'
