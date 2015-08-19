@@ -54,6 +54,9 @@ let g:gundo_right=1
 let g:NERDTreeWinPos="right"
 let g:Tlist_Use_Right_Window=1
 
+" LaTeX stuff.
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
 " Syntax plugins.
 Plugin 'nginx.vim'
 au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
