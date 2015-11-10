@@ -1,6 +1,6 @@
 default: all
 
-VUNDLE := git@github.com:willvousden/Vundle.vim.git
+VUNDLE := https://github.com/willvousden/Vundle.vim.git
 
 all: dotfiles install_vundle
 
