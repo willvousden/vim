@@ -231,7 +231,7 @@ set backup
 
 " Formatting options.
 set textwidth=100
-set formatoptions-=t
+set formatoptions-=t " Don't wrap all lines.
 set formatoptions+=c " Auto-wrap comments.
 set formatoptions+=r " Insert comment leader on <Enter> in insert mode.
 set formatoptions+=o " Insert comment leader after "o" or "O"
@@ -261,6 +261,14 @@ if has("autocmd") && !exists("autocommands_loaded")
 
     " For all text files, set 'textwidth' to 80 characters.
     autocmd FileType text,tex setlocal textwidth=80 formatoptions+=t
+
+    " Comply with PEP8.
+    autocmd FileType python setlocal textwidth=80
+
+    " Highlight "end" column.
+    if exists('&colorcolumn')
+        autocmd FileType * let &colorcolumn=&textwidth
+    endif
 
     " Remember positions in files with some Git-specific exceptions.
     autocmd BufReadPost *
