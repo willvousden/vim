@@ -267,7 +267,7 @@ if has("autocmd") && !exists("autocommands_loaded")
 
     " Highlight "end" column.
     if exists('&colorcolumn')
-        autocmd FileType * let &colorcolumn=&textwidth
+        autocmd FileType * let &colorcolumn=&textwidth+1
     endif
 
     " Remember positions in files with some Git-specific exceptions.
