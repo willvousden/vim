@@ -225,8 +225,8 @@ map <leader>q :mksession! $HOME/.vimsession<CR>:exe ":echo 'Session saved!'"<CR>
 map <leader>Q :source $HOME/.vimsession<CR>:exe ":echo 'Session loaded!'"<CR>
 
 " Set backup and history things.
-set dir=/tmp
-set backupdir=/tmp
+set dir=~/.tmp
+set backupdir=~/.tmp
 set backup
 
 " Formatting options.
