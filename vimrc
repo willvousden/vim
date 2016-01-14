@@ -183,6 +183,10 @@ set pastetoggle=<F6>
 " Disable annoying ex mode key.
 nnoremap Q <nop>
 
+" It's really annoying when I type :W accidentally because I don't lift my finger off SHIFT quickly
+" enough.
+command :W w
+
 " Navigation.
 map <Up> gk
 map <Down> gj
