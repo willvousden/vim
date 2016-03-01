@@ -79,6 +79,7 @@ end
 " Convenience plugins.
 let g:space_no_search = 1
 Plugin 'spiiph/vim-space'
+Plugin 'tommcdo/vim-exchange'
 Plugin 'ervandew/supertab'
 Plugin 'IndentAnything'
 Plugin 'matchit.zip'
