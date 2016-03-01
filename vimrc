@@ -41,7 +41,8 @@ let g:airline#extensions#hunks#non_zero_only = 1
 "let g:tmuxline_preset = "full"
 "let g:bufferline_rotate = 1
 "let g:bufferline_fixed_index = -1
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'edkolev/tmuxline.vim'
 nmap <leader>t :let &stal=(&stal + 1) % 3<cr>
