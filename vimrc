@@ -45,7 +45,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'edkolev/tmuxline.vim'
-nmap <leader>t :let &stal=(&stal + 1) % 3<cr>
+
+" Some buffer mappings.
+nmap <leader>t :let &showtabline=(&showtabline + 1) % 3<cr>
+nmap <leader>b :b#<cr>
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
@@ -187,7 +190,9 @@ nnoremap Q <nop>
 
 " It's really annoying when I type :W accidentally because I don't lift my finger off SHIFT quickly
 " enough.
-command W :w
+if !exists(":W")
+    command W :w
+endif
 
 " Navigation.
 map <Up> gk
