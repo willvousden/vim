@@ -274,7 +274,7 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd FileType text,tex setlocal textwidth=80 formatoptions+=t
 
     " Comply with PEP8.
-    autocmd FileType python setlocal textwidth=80
+    autocmd FileType python setlocal textwidth=79
 
     " Highlight "end" column.
     if exists('&colorcolumn')
