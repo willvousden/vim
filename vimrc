@@ -47,8 +47,11 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'edkolev/tmuxline.vim'
 
 " Some buffer mappings.
-nmap <leader>t :let &showtabline=(&showtabline + 1) % 3<cr>
+nmap <leader>t :let &showtabline=(&showtabline + 1) % 3<cr>:echo "showtabline ="&showtabline<cr>
 nmap <leader>b :b#<cr>
+
+" Destroy the current buffer without closing the split.
+nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<cr>
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
