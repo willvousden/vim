@@ -325,12 +325,6 @@ nnoremap <leader>A ggVG
 set linebreak
 nnoremap <leader>w :set nowrap!<CR>
 
-"" Tab navigation mappings.
-"nmap <silent> <C-j> :bN!<CR>
-"nmap <silent> <C-k> :bn!<CR>
-"imap <silent> <C-j> <C-o>:bN!<CR>
-"imap <silent> <C-k> <C-o>:bn!<CR>
-
 " Folding mappings.
 nnoremap <silent> <C-LeftMouse> <LeftMouse>za
 
