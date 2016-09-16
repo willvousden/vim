@@ -326,7 +326,14 @@ set linebreak
 nnoremap <leader>w :set nowrap!<CR>
 
 " Folding mappings.
+nnoremap <silent> <CR> za
+nnoremap <silent> <leader><CR> zA
 nnoremap <silent> <C-LeftMouse> <LeftMouse>za
+
+" Remapping <CR> can cause some problems in the command line and quickfix windows, so work around
+" this clash:
+autocmd CmdwinEnter * nnoremap <CR> <CR>
+autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
 " Word search mappings.
 nnoremap <silent> <S-LeftMouse> <LeftMouse>*
