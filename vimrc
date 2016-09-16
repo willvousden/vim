@@ -71,10 +71,14 @@ au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 Plugin 'jquery'
 Plugin 'tmatilai/gitolite.vim'
 Plugin 'zaiste/tmux.vim'
+
+" Python things.  Switch off folding from the python-syntax plugin; let SimpylFold handle it.
+let python_folding=0
 let python_highlight_all=1
 Plugin 'hdima/python-syntax'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'tmhedberg/SimpylFold'
+
 Plugin 'pangloss/vim-javascript'
 Plugin 'lepture/vim-jinja'
 if version < 704
