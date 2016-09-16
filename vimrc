@@ -74,7 +74,7 @@ Plugin 'zaiste/tmux.vim'
 let python_highlight_all=1
 Plugin 'hdima/python-syntax'
 Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'SimpylFold'
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lepture/vim-jinja'
 if version < 704
