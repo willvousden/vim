@@ -77,6 +77,7 @@ let python_folding=0
 let python_highlight_all=1
 Plugin 'hdima/python-syntax'
 Plugin 'hynek/vim-python-pep8-indent'
+let g:SimpylFold_docstring_preview=1
 Plugin 'tmhedberg/SimpylFold'
 
 Plugin 'pangloss/vim-javascript'
@@ -282,6 +283,10 @@ if has("autocmd") && !exists("autocommands_loaded")
 
     " Comply with PEP8.
     autocmd FileType python setlocal textwidth=79
+
+    " Make sure SimpylFold works properly.
+    autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+    autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
     " Highlight "end" column.
     if exists('&colorcolumn')
