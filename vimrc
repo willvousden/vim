@@ -259,6 +259,9 @@ set formatoptions+=l " Don't break long lines automatically.
 if has('patch-7.3.541')
     set formatoptions+=j " Remove comment leader from joined lines.
 endif
+if exists('&breakindent')
+    set breakindent
+end
 
 " Always enable status line.
 set laststatus=2
@@ -310,8 +313,7 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd FileType help nnoremap <CR> <C-]>
     autocmd FileType help nnoremap <buffer><BS> <C-T>
 
-    " Stuff for 7.0.3.
-    if version >= 703
+    if exists('&relativenumber')
         " Automatically enable relative numbering.
         set relativenumber
         autocmd BufReadPost * set relativenumber
