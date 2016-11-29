@@ -97,6 +97,8 @@ Plugin 'IndentAnything'
 Plugin 'matchit.zip'
 Plugin 'christoomey/vim-tmux-navigator'
 
+Plugin 'Valloric/YouCompleteMe'
+
 "Plugin 'sjl/splice.vim'
 Plugin 'tpope/vim-git'
 "Plugin 'airblade/vim-gitgutter'
