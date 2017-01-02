@@ -97,7 +97,7 @@ Plugin 'IndentAnything'
 Plugin 'matchit.zip'
 Plugin 'christoomey/vim-tmux-navigator'
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 "Plugin 'sjl/splice.vim'
 Plugin 'tpope/vim-git'
@@ -108,11 +108,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'sukima/xmledit'
 
-" Snippet stuff.
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" " Snippet stuff.
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
