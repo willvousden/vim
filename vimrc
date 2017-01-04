@@ -133,6 +133,9 @@ endif
 "hi clear SignColumn
 "call gitgutter#highlight#define_highlights()
 
+" Tell Vim that shell files should be interpreted as Bash by default.
+let g:is_bash=1
+
 " Set bash-style autocomplete behaviour.
 if has("wildmenu")
     set wildmenu
