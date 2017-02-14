@@ -58,6 +58,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
 Plugin 'sjl/gundo.vim'
 let g:gundo_right=1
+let g:gundo_return_on_revert=0
 let g:NERDTreeWinPos="right"
 let g:Tlist_Use_Right_Window=1
 
