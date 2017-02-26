@@ -294,7 +294,7 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd FileType python setlocal textwidth=79
 
     " Make sure SimpylFold works properly.
-    autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+    autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold#FoldExpr(v:lnum) foldmethod=expr
     autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
     " Highlight "end" column.
