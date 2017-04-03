@@ -55,12 +55,11 @@ nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<cr>
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
-Plugin 'taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
 let g:gundo_right=1
 let g:gundo_return_on_revert=0
 let g:NERDTreeWinPos="right"
-let g:Tlist_Use_Right_Window=1
 
 " LaTeX stuff.
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -284,7 +283,7 @@ if has("autocmd") && !exists("autocommands_loaded")
 
     " Sidebar mappings.
     autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
-    autocmd VimEnter * nnoremap <silent> <S-Tab> :Tlist<CR>
+    autocmd VimEnter * nnoremap <silent> <S-Tab> :TagbarToggle<CR>
     autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
     " For all text files, set 'textwidth' to 80 characters.
