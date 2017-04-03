@@ -382,3 +382,7 @@ if !exists(":DiffOrig")
     command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
         \ | wincmd p | diffthis
 endif
+
+if filereadable(printf("%s/.vimrc.local", $HOME))
+    source $HOME/.vimrc.local
+end
