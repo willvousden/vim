@@ -274,6 +274,9 @@ set laststatus=2
 if has("autocmd") && !exists("autocommands_loaded")
     let autocommands_loaded = 1
 
+    " Vim has a habit of clearing the clipboard on exit.  Undo this stupid behaviour.
+    autocmd VimLeave * call system("xsel -ib", getreg("+"))
+
     " FIXME Verify this!
     autocmd BufReadPost * let [&tabstop, &softtabstop] = [&shiftwidth, &shiftwidth]
 
