@@ -321,8 +321,8 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd FileType help set nonumber
 
     " Enter selects the current tag and backspace goes back.
-    autocmd FileType help nnoremap <CR> <C-]>
-    autocmd FileType help nnoremap <buffer><BS> <C-T>
+    autocmd FileType help nnoremap <buffer> <CR> <C-]>
+    autocmd FileType help nnoremap <buffer> <BS> <C-T>
 
     if exists('&relativenumber')
         " Automatically enable relative numbering.
