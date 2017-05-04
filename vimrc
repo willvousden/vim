@@ -299,6 +299,9 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold#FoldExpr(v:lnum) foldmethod=expr
     autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
+    " Set syntax highlighting for Bash vim mode.
+    autocmd BufRead,BufNewFile bash-fc-* set filetype=sh
+
     " Highlight "end" column.
     if exists('&colorcolumn')
         autocmd FileType * let &colorcolumn=&textwidth+1
