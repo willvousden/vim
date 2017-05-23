@@ -96,6 +96,7 @@ Plugin 'ervandew/supertab'
 Plugin 'IndentAnything'
 Plugin 'matchit.zip'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'kana/vim-fakeclip'
 
 " Plugin 'Valloric/YouCompleteMe'
 
