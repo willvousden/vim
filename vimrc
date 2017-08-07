@@ -156,6 +156,7 @@ set encoding=utf-8
 set hidden
 set visualbell
 set autoindent
+set cinoptions=(0 " Correct line continuation indentation inside brackets.
 set foldmethod=syntax
 set foldopen-=block
 set backspace=indent,eol,start
