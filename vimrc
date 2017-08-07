@@ -55,6 +55,7 @@ nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<cr>
 
 " NERDTree stuff and TagList.
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'majutsushi/tagbar'
 Plugin 'sjl/gundo.vim'
 let g:gundo_right=1
