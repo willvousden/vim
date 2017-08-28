@@ -67,6 +67,8 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Syntax plugins.
 Plugin 'nginx.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'ap/vim-css-color'
 Plugin 'slim-template/vim-slim'
 au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
 Plugin 'jquery'
