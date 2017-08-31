@@ -280,6 +280,10 @@ set laststatus=2
 if has("autocmd") && !exists("autocommands_loaded")
     let autocommands_loaded = 1
 
+    " Allow for tab-local working directories.
+    autocmd TabEnter * if exists("t:wd") | exe "cd " . t:wd | endif
+    autocmd TabLeave * let t:wd = getcwd()
+
     " Vim has a habit of clearing the clipboard on exit.  Undo this stupid behaviour.
     autocmd VimLeave * call system("xsel -ib", getreg("+"))
 
