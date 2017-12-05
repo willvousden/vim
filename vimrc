@@ -308,7 +308,8 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
     " For all text files, set 'textwidth' to 80 characters.
-    autocmd FileType text,tex setlocal textwidth=80 formatoptions+=t
+    autocmd FileType text setlocal textwidth=80 formatoptions+=t
+    autocmd FileType tex setlocal textwidth=100 formatoptions+=t
 
     " Comply with PEP8.
     autocmd FileType python setlocal textwidth=79
