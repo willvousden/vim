@@ -68,7 +68,6 @@ nnoremap <leader>n :NERDTreeFocus<cr>
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Syntax plugins.
-Plugin 'Konfekt/FastFold'
 Plugin 'nginx.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ap/vim-css-color'
@@ -93,6 +92,13 @@ if version < 704
 else
     Plugin 'cakebaker/scss-syntax.vim'
 end
+
+" FastFold configuration.
+Plugin 'Konfekt/FastFold'
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes = ['x', 'X', 'a', 'A', 'o', 'O', 'c', 'C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " Convenience plugins.
 let g:space_no_search = 1
