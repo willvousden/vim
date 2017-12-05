@@ -68,6 +68,7 @@ nnoremap <leader>n :NERDTreeFocus<cr>
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Syntax plugins.
+Plugin 'exu/pgsql.vim'
 Plugin 'nginx.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ap/vim-css-color'
