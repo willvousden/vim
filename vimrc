@@ -61,6 +61,8 @@ Plugin 'sjl/gundo.vim'
 let g:gundo_right=1
 let g:gundo_return_on_revert=0
 let g:NERDTreeWinPos="right"
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$']
+nnoremap <leader>n :NERDTreeFocus<cr>
 
 " LaTeX stuff.
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -295,7 +297,7 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 
     " Sidebar mappings.
-    autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR>
+    autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR><c-w>=
     autocmd VimEnter * nnoremap <silent> <S-Tab> :TagbarToggle<CR>
     autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
 
