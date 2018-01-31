@@ -70,6 +70,7 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 " Syntax plugins.
 Plugin 'exu/pgsql.vim'
 Plugin 'nginx.vim'
+Plugin 'wavded/vim-stylus'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ap/vim-css-color'
 Plugin 'slim-template/vim-slim'
