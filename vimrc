@@ -65,7 +65,7 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$']
 nnoremap <leader>n :NERDTreeFocus<cr>
 
 " LaTeX stuff.
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'lervag/vimtex'
 
 " Syntax plugins.
 Plugin 'exu/pgsql.vim'
