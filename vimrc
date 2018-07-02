@@ -68,6 +68,7 @@ nnoremap <leader>n :NERDTreeFocus<cr>
 Plugin 'lervag/vimtex'
 
 " Syntax plugins.
+Plugin 'https://github.com/bfrg/vim-cpp-modern'
 Plugin 'lifepillar/pgsql.vim'
 Plugin 'nginx.vim'
 Plugin 'wavded/vim-stylus'
