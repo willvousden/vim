@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VUNDLE=https://github.com/willvousden/Vundle.vim.git
+PLUG=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+VIM_PATH=$(pwd)
+VIMRC_PATH=$VIM_PATH/vimrc
+PLUG_PATH="$VIM_PATH/autoload/plug.vim"
 
 # Deploy dotfiles.
-ln -snf "$(pwd)/vimrc" ~/.vimrc
+ln -snf "$VIMRC_PATH" ~/.vimrc
 mkdir -p ~/.tmp
 
-# Install Vundle.
-[[ -e $(pwd)/bundle/Vundle.vim ]] || git clone "$VUNDLE" "$(pwd)/bundle/Vundle.vim"
-vim -u "$(pwd)/vimrc" +PluginInstall +qall
+# Install Plug.
+[[ -e "$PLUG_PATH" ]] || curl -fLo "$PLUG_PATH" --create-dirs "$PLUG"
+vim -u "$VIMRC_PATH" +PlugInstall +qall

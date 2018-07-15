@@ -11,21 +11,16 @@ let &runtimepath = printf('%s,%s,%s/after', g:portable, &runtimepath, g:portable
 let mapleader=","
 let maplocalleader="\\"
 
-" Vundle stuff.
 set nocompatible
-filetype off
-let s:vundle = printf('%s/bundle', g:portable)
-let &runtimepath = printf('%s,%s/Vundle.vim', &runtimepath, s:vundle)
-call vundle#begin(s:vundle)
-Plugin 'willvousden/Vundle.vim'
+call plug#begin(printf('%s/plugged', g:portable))
 
 " Which plugins do we want?
 
 " Local vimrc files.
-Plugin 'embear/vim-localvimrc'
+Plug 'embear/vim-localvimrc'
 
 " Colours...
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 "let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -41,10 +36,10 @@ let g:airline#extensions#hunks#non_zero_only = 1
 "let g:tmuxline_preset = "full"
 "let g:bufferline_rotate = 1
 "let g:bufferline_fixed_index = -1
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'bling/vim-bufferline'
-"Plugin 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'bling/vim-bufferline'
+"Plug 'edkolev/tmuxline.vim'
 
 " Some buffer mappings.
 nmap <leader>t :let &showtabline=(&showtabline + 1) % 3<cr>:echo "showtabline ="&showtabline<cr>
@@ -54,10 +49,10 @@ nmap <leader>b :b#<cr>
 nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<cr>
 
 " NERDTree stuff and TagList.
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'majutsushi/tagbar'
-Plugin 'sjl/gundo.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'majutsushi/tagbar'
+Plug 'sjl/gundo.vim'
 let g:gundo_right=1
 let g:gundo_return_on_revert=0
 let g:NERDTreeWinPos="right"
@@ -65,38 +60,36 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$']
 nnoremap <leader>n :NERDTreeFocus<cr>
 
 " LaTeX stuff.
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 " Syntax plugins.
-Plugin 'lifepillar/pgsql.vim'
-Plugin 'nginx.vim'
-Plugin 'wavded/vim-stylus'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'ap/vim-css-color'
-Plugin 'slim-template/vim-slim'
+Plug 'lifepillar/pgsql.vim'
+Plug 'wavded/vim-stylus'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'ap/vim-css-color'
+Plug 'slim-template/vim-slim'
 au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
-Plugin 'jquery'
-Plugin 'tmatilai/gitolite.vim'
-Plugin 'zaiste/tmux.vim'
+Plug 'tmatilai/gitolite.vim'
+Plug 'zaiste/tmux.vim'
 
 " Python things.  Switch off folding from the python-syntax plugin; let SimpylFold handle it.
 let python_folding=0
 let python_highlight_all=1
-Plugin 'hdima/python-syntax'
-Plugin 'hynek/vim-python-pep8-indent'
+Plug 'hdima/python-syntax'
+Plug 'hynek/vim-python-pep8-indent'
 let g:SimpylFold_docstring_preview=1
-Plugin 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold'
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'lepture/vim-jinja'
+Plug 'pangloss/vim-javascript'
+Plug 'lepture/vim-jinja'
 if version < 704
-    Plugin 'JulesWang/css.vim'
+    Plug 'JulesWang/css.vim'
 else
-    Plugin 'cakebaker/scss-syntax.vim'
+    Plug 'cakebaker/scss-syntax.vim'
 end
 
 " FastFold configuration.
-Plugin 'Konfekt/FastFold'
+Plug 'Konfekt/FastFold'
 nmap zuz <Plug>(FastFoldUpdate)
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes = ['x', 'X', 'a', 'A', 'o', 'O', 'c', 'C']
@@ -104,33 +97,21 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " Convenience plugins.
 let g:space_no_search = 1
-Plugin 'spiiph/vim-space'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'ervandew/supertab'
-Plugin 'IndentAnything'
-Plugin 'matchit.zip'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'kana/vim-fakeclip'
+Plug 'spiiph/vim-space'
+Plug 'tommcdo/vim-exchange'
+Plug 'ervandew/supertab'
+Plug 'tmhedberg/matchit'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'kana/vim-fakeclip'
 
-" Plugin 'Valloric/YouCompleteMe'
-
-"Plugin 'sjl/splice.vim'
-Plugin 'tpope/vim-git'
-"Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
 let NERDSpaceDelims = 1
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
-Plugin 'sukima/xmledit'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'sukima/xmledit'
 
-" " Snippet stuff.
-" Plugin 'MarcWeber/vim-addon-mw-utils'
-" Plugin 'tomtom/tlib_vim'
-" Plugin 'garbas/vim-snipmate'
-" Plugin 'honza/vim-snippets'
-
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " Colours (has to be done after vundle#end()).
 set background=dark
