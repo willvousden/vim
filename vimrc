@@ -14,6 +14,15 @@ let maplocalleader="\\"
 set nocompatible
 call plug#begin(printf('%s/plugged', g:portable))
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 " Which plugins do we want?
 
 " Local vimrc files.
