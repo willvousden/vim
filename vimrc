@@ -63,6 +63,7 @@ nnoremap <leader>n :NERDTreeFocus<cr>
 Plug 'lervag/vimtex'
 
 " Syntax plugins.
+Plug 'bfrg/vim-cpp-modern'
 Plug 'lifepillar/pgsql.vim'
 Plug 'wavded/vim-stylus'
 Plug 'hail2u/vim-css3-syntax'
@@ -294,8 +295,8 @@ if has("autocmd") && !exists("autocommands_loaded")
     autocmd FileType text setlocal textwidth=80 formatoptions+=t
     autocmd FileType tex setlocal textwidth=100 formatoptions+=t
 
-    " Comply with PEP8.
-    autocmd FileType python setlocal textwidth=79
+    " Don't comply with PEP8.
+    autocmd FileType python setlocal textwidth=100
 
     " Make sure SimpylFold works properly.
     autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold#FoldExpr(v:lnum) foldmethod=expr
