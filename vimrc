@@ -14,6 +14,16 @@ let maplocalleader="\\"
 set nocompatible
 call plug#begin(printf('%s/plugged', g:portable))
 
+" Language server setup.
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+\ }
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+\ }
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
