@@ -75,6 +75,7 @@ Plug 'sjl/gundo.vim'
 let g:gundo_right=1
 let g:gundo_return_on_revert=0
 let g:NERDTreeWinPos="right"
+let g:NERDTreeMinimalUI=1
 let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$']
 nnoremap <leader>n :NERDTreeFocus<cr>
 
