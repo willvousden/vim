@@ -117,7 +117,6 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " Convenience plugins.
 let g:space_no_search = 1
-Plug 'spiiph/vim-space'
 Plug 'tommcdo/vim-exchange'
 Plug 'ervandew/supertab'
 Plug 'tmhedberg/matchit'
