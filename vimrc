@@ -126,6 +126,7 @@ Plug 'kana/vim-fakeclip'
 
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 let NERDSpaceDelims = 1
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
@@ -144,10 +145,6 @@ if &t_Co > 2 || has("gui_running")
         silent! colorscheme solarized
     endif
 endif
-
-"" Fix buggy colours in gitgutter.
-"hi clear SignColumn
-"call gitgutter#highlight#define_highlights()
 
 " Tell Vim that shell files should be interpreted as Bash by default.
 let g:is_bash=1
