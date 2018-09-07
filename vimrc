@@ -101,6 +101,7 @@ Plug 'hynek/vim-python-pep8-indent'
 let g:SimpylFold_docstring_preview=1
 Plug 'tmhedberg/SimpylFold'
 
+Plug 'udalov/kotlin-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'lepture/vim-jinja'
 if version < 704
