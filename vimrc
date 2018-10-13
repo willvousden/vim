@@ -94,9 +94,8 @@ Plug 'tmatilai/gitolite.vim'
 Plug 'zaiste/tmux.vim'
 
 " Python things.  Switch off folding from the python-syntax plugin; let SimpylFold handle it.
-let python_folding=0
-let python_highlight_all=1
-Plug 'hdima/python-syntax'
+let g:python_highlight_all=1
+Plug 'vim-python/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
 let g:SimpylFold_docstring_preview=1
 Plug 'tmhedberg/SimpylFold'
