@@ -21,7 +21,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 \ }
 set hidden
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['pyls'],
 \ }
 
 if has('nvim')
