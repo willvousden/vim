@@ -78,6 +78,13 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$']
 nnoremap <leader>n :NERDTreeFocus<cr>
 
+" White space stuff.
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+Plug 'tpope/vim-sleuth'
+
 " LaTeX stuff.
 Plug 'lervag/vimtex'
 
@@ -187,12 +194,6 @@ set listchars=tab:▸·,eol:¬,trail:·,extends:«,precedes:»,nbsp:_
 
 nmap <silent> <leader>u :syntax sync fromstart<CR>:redraw!<CR>
 nmap <silent> <leader>l :set list!<CR>
-
-" White space stuff.
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
 
 " More intuitive split behaviour.
 set splitbelow
