@@ -40,6 +40,9 @@ Plug 'embear/vim-localvimrc'
 " Colours...
 Plug 'altercation/vim-colors-solarized'
 
+" CtrlP!
+Plug 'ctrlpvim/ctrlp.vim'
+
 "let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
