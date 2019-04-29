@@ -14,15 +14,6 @@ let maplocalleader="\\"
 set nocompatible
 call plug#begin(printf('%s/plugged', g:portable))
 
-" Language server setup.
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-\ }
-set hidden
-let g:LanguageClient_serverCommands = {
-\ }
-
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -52,15 +43,13 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#hunks#non_zero_only = 1
-"let g:tmuxline_powerline_separators = 0
-"let g:tmuxline_theme = "airline"
-"let g:tmuxline_preset = "full"
-"let g:bufferline_rotate = 1
-"let g:bufferline_fixed_index = -1
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'bling/vim-bufferline'
-"Plug 'edkolev/tmuxline.vim'
+
+" let g:tmuxline_powerline_separators = 0
+" let g:tmuxline_theme = "airline"
+" let g:tmuxline_preset = "full"
+" Plug 'edkolev/tmuxline.vim'
 
 " Some buffer mappings.
 nmap <leader>t :let &showtabline=(&showtabline + 1) % 3<cr>:echo "showtabline ="&showtabline<cr>
@@ -95,13 +84,11 @@ Plug 'lervag/vimtex'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'lifepillar/pgsql.vim'
-Plug 'wavded/vim-stylus'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'ap/vim-css-color'
 Plug 'slim-template/vim-slim'
-au BufRead,BufNewFile nginx.conf if &ft == '' | setfiletype nginx | endif
-Plug 'tmatilai/gitolite.vim'
 Plug 'zaiste/tmux.vim'
+Plug 'udalov/kotlin-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'lepture/vim-jinja'
 
 " Python things.  Switch off folding from the python-syntax plugin; let SimpylFold handle it.
 let g:python_highlight_all=1
@@ -110,9 +97,9 @@ Plug 'hynek/vim-python-pep8-indent'
 let g:SimpylFold_docstring_preview=1
 Plug 'tmhedberg/SimpylFold'
 
-Plug 'udalov/kotlin-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'lepture/vim-jinja'
+" CSS.
+Plug 'ap/vim-css-color'
+Plug 'hail2u/vim-css3-syntax'
 if version < 704
     Plug 'JulesWang/css.vim'
 else
@@ -144,9 +131,8 @@ Plug 'sukima/xmledit'
 
 call plug#end()
 
-" Colours (has to be done after vundle#end()).
+" Colours.
 set background=dark
-let g:molokai_original=0
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
@@ -204,8 +190,6 @@ set splitbelow
 set splitright
 
 " Searches and stuff.
-"nnoremap / /\v
-"vnoremap / /\v
 set magic
 set smartcase
 set ignorecase
@@ -289,8 +273,18 @@ end
 " Always enable status line.
 set laststatus=2
 
+" Folding mappings.
+nnoremap <silent> <CR> za
+nnoremap <silent> <leader><CR> zA
+nnoremap <silent> <C-LeftMouse> <LeftMouse>za
+
 if has("autocmd") && !exists("autocommands_loaded")
     let autocommands_loaded = 1
+
+    " Remapping <CR> can cause some problems in the command line and quickfix windows, so work around
+    " this clash:
+    autocmd CmdwinEnter * nnoremap <CR> <CR>
+    autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
     " Allow for tab-local working directories.
     autocmd TabEnter * if exists("t:wd") | exe "cd " . t:wd | endif
@@ -302,21 +296,10 @@ if has("autocmd") && !exists("autocommands_loaded")
     " FIXME Verify this!
     autocmd BufReadPost * let [&tabstop, &softtabstop] = [&shiftwidth, &shiftwidth]
 
-    " JavaScript stuff.
-    let javaScript_fold=1
-    autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
-
     " Sidebar mappings.
     autocmd VimEnter * nnoremap <silent> <Tab> :NERDTreeToggle<CR><c-w>=
     autocmd VimEnter * nnoremap <silent> <S-Tab> :TagbarToggle<CR>
     autocmd VimEnter * nnoremap <leader>g :GundoToggle<CR>
-
-    " For all text files, set 'textwidth' to 80 characters.
-    autocmd FileType text setlocal textwidth=80 formatoptions+=t
-    autocmd FileType tex setlocal textwidth=100 formatoptions+=t
-
-    " Don't comply with PEP8.
-    autocmd FileType python setlocal textwidth=100
 
     " Make sure SimpylFold works properly.
     autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold#FoldExpr(v:lnum) foldmethod=expr
@@ -340,13 +323,6 @@ if has("autocmd") && !exists("autocommands_loaded")
         \     exe "normal! g`\"" |
         \ endif
 
-    " No line numbers when viewing help.
-    autocmd FileType help set nonumber
-
-    " Enter selects the current tag and backspace goes back.
-    autocmd FileType help nnoremap <buffer> <CR> <C-]>
-    autocmd FileType help nnoremap <buffer> <BS> <C-T>
-
     if exists('&relativenumber')
         " Automatically enable relative numbering.
         set relativenumber
@@ -366,29 +342,11 @@ nnoremap <leader>A ggVG
 set linebreak
 nnoremap <leader>w :set nowrap!<CR>
 
-" Folding mappings.
-nnoremap <silent> <CR> za
-nnoremap <silent> <leader><CR> zA
-nnoremap <silent> <C-LeftMouse> <LeftMouse>za
-
-" Remapping <CR> can cause some problems in the command line and quickfix windows, so work around
-" this clash:
-autocmd CmdwinEnter * nnoremap <CR> <CR>
-autocmd BufReadPost quickfix nnoremap <CR> <CR>
-
-" Word search mappings.
-nnoremap <silent> <S-LeftMouse> <LeftMouse>*
-
 " Camel/Pascal case identifier navigation.
 nnoremap <silent> <C-Left> :call search('\<\<Bar>\u', 'bW')<CR>
 nnoremap <silent> <C-Right> :call search('\<\<Bar>\u', 'W')<CR>
 inoremap <silent> <C-Left> <C-o>:call search('\<\<Bar>\u', 'bW')<CR>
 inoremap <silent> <C-Right> <C-o>:call search('\<\<Bar>\u', 'W')<CR>
-
-" When deleting lines or words, insert an undo break first to avoid loss.
-inoremap <C-U> <C-G>u<C-U>
-inoremap <C-W> <C-G>u<C-W>
-
 
 " Enable mouse support.
 if has('mouse')
@@ -402,14 +360,6 @@ if has('mouse')
             set ttymouse=xterm2
         endif
     endif
-endif
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.  Only define it when not
-" defined already.
-if !exists(":DiffOrig")
-    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-        \ | wincmd p | diffthis
 endif
 
 if filereadable(printf("%s/.vimrc.local", $HOME))
