@@ -62,13 +62,17 @@ nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<cr>
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
-Plug 'sjl/gundo.vim'
-let g:gundo_right=1
-let g:gundo_return_on_revert=0
 let g:NERDTreeWinPos="right"
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$']
 nnoremap <leader>n :NERDTreeFocus<cr>
+
+Plug 'sjl/gundo.vim'
+let g:gundo_right=1
+let g:gundo_return_on_revert=0
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
 
 " White space stuff.
 set tabstop=4
