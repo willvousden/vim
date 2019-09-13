@@ -33,6 +33,16 @@ Plug 'altercation/vim-colors-solarized'
 
 " CtrlP!
 Plug 'ctrlpvim/ctrlp.vim'
+set wildignore+=*/tmp/*
+set wildignore+=*/build/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/__pycache__/*
+set wildignore+=*.so
+set wildignore+=*.o
+set wildignore+=*.class
+set wildignore+=*.swp
+set wildignore+=*.pyc
+set wildignore+=*.pyc
 
 "let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
