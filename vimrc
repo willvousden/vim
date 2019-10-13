@@ -131,7 +131,7 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 let g:SuperTabDefaultCompletionType = '<c-n>'
 Plug 'tommcdo/vim-exchange'
 Plug 'ervandew/supertab'
-Plug 'tmhedberg/matchit'
+Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kana/vim-fakeclip'
 
