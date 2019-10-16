@@ -103,6 +103,7 @@ Plug 'zaiste/tmux.vim'
 Plug 'udalov/kotlin-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'lepture/vim-jinja'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Python things.  Switch off folding from the python-syntax plugin; let SimpylFold handle it.
 let g:python_highlight_all=1
