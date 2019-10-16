@@ -177,6 +177,7 @@ set encoding=utf-8
 set hidden
 set visualbell
 set autoindent
+set copyindent " Copy the indentation from the previous line; e.g., tabs and spaces.
 set cinoptions=(0 " Correct line continuation indentation inside brackets.
 set foldmethod=syntax
 set foldopen-=block
