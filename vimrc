@@ -95,6 +95,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'lervag/vimtex'
 
 " Syntax plugins.
+Plug 'chr4/nginx.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'lifepillar/pgsql.vim'
