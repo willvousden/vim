@@ -95,6 +95,7 @@ set expandtab
 Plug 'tpope/vim-sleuth'
 
 " LaTeX stuff.
+let g:tex_flavor = 'latex'
 Plug 'lervag/vimtex'
 
 " Syntax plugins.
