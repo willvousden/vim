@@ -14,9 +14,6 @@ let maplocalleader="\\"
 set nocompatible
 call plug#begin(printf('%s/plugged', g:portable))
 
-" ALE!
-Plug 'dense-analysis/ale'
-
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -150,13 +147,6 @@ Plug 'tpope/vim-surround'
 Plug 'sukima/xmledit'
 
 call plug#end()
-
-" call deoplete#custom#source('ale', 'dup', v:true)
-call deoplete#custom#option('sources', { '_': ['ale'], })
-
-let g:ale_linters = {
-\   'go': ['gopls'],
-\}
 
 " Colours.
 if &t_Co > 2 || has("gui_running")
