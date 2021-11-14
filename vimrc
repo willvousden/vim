@@ -23,8 +23,6 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 
-" Which plugins do we want?
-
 " Local vimrc files.
 Plug 'embear/vim-localvimrc'
 
