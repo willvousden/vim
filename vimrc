@@ -32,7 +32,7 @@ let g:deoplete#enable_at_startup = 1
 Plug 'embear/vim-localvimrc'
 
 " Colours...
-Plug 'altercation/vim-colors-solarized'
+Plug 'romainl/flattened'
 
 " CtrlP!
 Plug 'ctrlpvim/ctrlp.vim'
@@ -159,13 +159,13 @@ let g:ale_linters = {
 \}
 
 " Colours.
-set background=dark
 if &t_Co > 2 || has("gui_running")
     syntax on
     set hlsearch
+
+    " Only set a nice colour scheme if the term supports it.
     if &t_Co >= 16 || has("gui_running")
-        " Only set a nice colour scheme if the term supports it.
-        silent! colorscheme solarized
+        silent! colorscheme flattened_dark
     endif
 endif
 
