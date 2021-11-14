@@ -42,17 +42,23 @@ set wildignore+=*.swp
 set wildignore+=*.pyc
 set wildignore+=*.pyc
 
-"let g:airline#extensions#tmuxline#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#buffer_min_count = 2
-let g:airline#extensions#hunks#non_zero_only = 1
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+set showtabline=2
+let g:lightline = {
+    \ 'colorscheme': 'flattened_dark',
+    \ 'tabline': {
+    \   'left': [ ['buffers'] ],
+    \   'right': [ ['close'] ]
+    \ },
+    \ 'component_expand': {
+    \   'buffers': 'lightline#bufferline#buffers'
+    \ },
+    \ 'component_type': {
+    \   'buffers': 'tabsel'
+    \ }
+  \ }
+let g:lightline#bufferline#min_buffer_count = 2
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'itchyny/lightline.vim'
 
 " let g:tmuxline_powerline_separators = 0
 " let g:tmuxline_theme = "airline"
@@ -60,7 +66,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'edkolev/tmuxline.vim'
 
 " Some buffer mappings.
-nmap <leader>t :let &showtabline=(&showtabline + 1) % 3<cr>:echo "showtabline ="&showtabline<cr>
 nmap <leader>b :b#<cr>
 
 " Destroy the current buffer without closing the split.
