@@ -60,10 +60,10 @@ let g:lightline#bufferline#min_buffer_count = 2
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'itchyny/lightline.vim'
 
-" let g:tmuxline_powerline_separators = 0
-" let g:tmuxline_theme = "airline"
-" let g:tmuxline_preset = "full"
-" Plug 'edkolev/tmuxline.vim'
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_theme = "lightline"
+let g:tmuxline_preset = "full"
+Plug 'edkolev/tmuxline.vim'
 
 " Some buffer mappings.
 nmap <leader>b :b#<cr>
