@@ -91,10 +91,6 @@ set softtabstop=4
 set expandtab
 Plug 'tpope/vim-sleuth'
 
-" LaTeX stuff.
-let g:tex_flavor = 'latex'
-Plug 'lervag/vimtex'
-
 " Syntax plugins.
 Plug 'chr4/nginx.vim'
 Plug 'ekalinin/Dockerfile.vim'
@@ -256,9 +252,6 @@ nmap <leader>y :call system('clip', @0)<CR>:exe ":echo 'Anonymous buffer sent to
 
 " Session managment.
 set sessionoptions=blank,buffers,curdir,folds,help,resize,tabpages,winsize
-
-" Tag stuff.
-let tlist_tex_settings='tex;b:bibitem;c:command;l:label'
 
 " Mappings for editing and reloading vimrc.
 map <leader>v :sp<CR>:e $MYVIMRC<CR><C-w>_
