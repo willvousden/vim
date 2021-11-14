@@ -14,6 +14,8 @@ let maplocalleader="\\"
 set nocompatible
 call plug#begin(printf('%s/plugged', g:portable))
 
+Plug 'bufbuild/vim-buf'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
