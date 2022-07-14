@@ -97,6 +97,7 @@ set expandtab
 Plug 'tpope/vim-sleuth'
 
 " Syntax plugins.
+Plug 'hashivim/vim-terraform'
 Plug 'chr4/nginx.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'bfrg/vim-cpp-modern'
