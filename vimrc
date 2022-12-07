@@ -14,6 +14,16 @@ let maplocalleader="\\"
 set nocompatible
 call plug#begin(printf('%s/plugged', g:portable))
 
+" Things that are useful in VS Code as well.
+Plug 'scrooloose/nerdcommenter'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-surround'
+
+if exists('g:vscode')
+    call plug#end()
+    finish
+endif
+
 Plug 'bufbuild/vim-buf'
 
 if has('nvim')
@@ -97,6 +107,7 @@ set expandtab
 Plug 'tpope/vim-sleuth'
 
 " Syntax plugins.
+Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'chr4/nginx.vim'
 Plug 'ekalinin/Dockerfile.vim'
@@ -134,7 +145,6 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " Convenience plugins.
 let g:SuperTabDefaultCompletionType = '<c-n>'
-Plug 'tommcdo/vim-exchange'
 Plug 'ervandew/supertab'
 Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
@@ -144,8 +154,6 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 let NERDSpaceDelims = 1
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
 Plug 'sukima/xmledit'
 
 call plug#end()
