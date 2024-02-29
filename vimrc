@@ -89,7 +89,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 let g:NERDTreeWinPos="right"
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$']
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__$', '^\.git$[[dir]]']
+let g:NERDTreeShowFilesLines=1
+let g:NERDTreeShowHidden=1
 nnoremap <leader>n :NERDTreeFocus<cr>
 
 Plug 'sjl/gundo.vim'
