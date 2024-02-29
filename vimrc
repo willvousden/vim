@@ -106,6 +106,8 @@ set softtabstop=4
 set expandtab
 Plug 'tpope/vim-sleuth'
 
+Plug 'vim-autoformat/vim-autoformat'
+
 " Syntax plugins.
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
