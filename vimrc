@@ -42,6 +42,8 @@ Plug 'embear/vim-localvimrc'
 Plug 'romainl/flattened'
 
 " CtrlP!
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 Plug 'ctrlpvim/ctrlp.vim'
 set wildignore+=*/tmp/*
 set wildignore+=*/build/*
