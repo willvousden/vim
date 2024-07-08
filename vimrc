@@ -38,9 +38,6 @@ let g:deoplete#enable_at_startup = 1
 " Local vimrc files.
 Plug 'embear/vim-localvimrc'
 
-" Colours...
-Plug 'romainl/flattened'
-
 " CtrlP!
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -58,7 +55,7 @@ set wildignore+=*.pyc
 
 set showtabline=2
 let g:lightline = {
-    \ 'colorscheme': 'flattened_dark',
+    \ 'colorscheme': '16color',
     \ 'tabline': {
     \   'left': [ ['buffers'] ],
     \   'right': [ ['close'] ]
@@ -165,6 +162,8 @@ Plug 'airblade/vim-gitgutter'
 let NERDSpaceDelims = 1
 Plug 'sukima/xmledit'
 
+Plug 'lifepillar/vim-solarized8', { 'branch': 'neovim' }
+
 call plug#end()
 
 " Colours.
@@ -174,7 +173,10 @@ if &t_Co > 2 || has("gui_running")
 
     " Only set a nice colour scheme if the term supports it.
     if &t_Co >= 16 || has("gui_running")
-        silent! colorscheme flattened_dark
+        let g:solarized_t_Co=16
+        set notermguicolors
+        set background=dark
+        colorscheme solarized8
     endif
 endif
 
