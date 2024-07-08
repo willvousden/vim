@@ -99,9 +99,7 @@ nnoremap <leader>n :NERDTreeFocus<cr>
 Plug 'sjl/gundo.vim'
 let g:gundo_right=1
 let g:gundo_return_on_revert=0
-if has('python3')
-    let g:gundo_prefer_python3 = 1
-endif
+let g:gundo_prefer_python3 = 1
 
 " White space stuff.
 set tabstop=4
@@ -136,11 +134,7 @@ Plug 'tmhedberg/SimpylFold'
 " CSS.
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
-if version < 704
-    Plug 'JulesWang/css.vim'
-else
-    Plug 'cakebaker/scss-syntax.vim'
-end
+Plug 'cakebaker/scss-syntax.vim'
 
 " FastFold configuration.
 Plug 'Konfekt/FastFold'
@@ -154,7 +148,6 @@ let g:SuperTabDefaultCompletionType = '<c-n>'
 Plug 'ervandew/supertab'
 Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kana/vim-fakeclip'
 
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
