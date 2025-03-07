@@ -24,6 +24,54 @@ map <silent> Y y$
 " Easy selection!
 nnoremap <leader>A ggVG
 
+" Easy wrap toggling!
+set linebreak
+nnoremap <leader>w :set nowrap!<CR>
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-surround'
+
+" Tell Vim that shell files should be interpreted as Bash by default.
+let g:is_bash=1
+
+" Basic stuff.
+set encoding=utf-8
+set hidden
+set visualbell
+set autoindent
+set copyindent " Copy the indentation from the previous line; e.g., tabs and spaces.
+set cinoptions=(0 " Correct line continuation indentation inside brackets.
+set foldmethod=syntax
+set foldopen-=block
+set backspace=indent,eol,start
+set modeline
+set modelines=50
+
+set history=50 " Keep 50 lines of command line history.
+set ruler " Show the cursor position all the time.
+set showcmd " Display incomplete commands.
+set incsearch " Enable incremental searching.
+
+" Formatting options.
+set textwidth=100
+set formatoptions-=t " Don't wrap all lines.
+set formatoptions+=c " Auto-wrap comments.
+set formatoptions+=r " Insert comment leader on <Enter> in insert mode.
+set formatoptions+=o " Insert comment leader after "o" or "O"
+set formatoptions+=q " Comment formatting with "gq".
+set formatoptions+=l " Don't break long lines automatically.
+if has('patch-7.3.541')
+    set formatoptions+=j " Remove comment leader from joined lines.
+endif
+if exists('&breakindent')
+    set breakindent
+end
+
+" More intuitive split behaviour.
+set splitbelow
+set splitright
+
+if exists('&relativenumber')
+    set relativenumber
+endif

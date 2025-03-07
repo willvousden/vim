@@ -53,9 +53,6 @@ let g:tmuxline_theme = "lightline"
 let g:tmuxline_preset = "full"
 Plug 'edkolev/tmuxline.vim'
 
-" Some buffer mappings.
-nmap <leader>b :b#<cr>
-
 " Destroy the current buffer without closing the split.
 nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<cr>
 
@@ -147,9 +144,6 @@ if &t_Co > 2 || has("gui_running")
     endif
 endif
 
-" Tell Vim that shell files should be interpreted as Bash by default.
-let g:is_bash=1
-
 " Set bash-style autocomplete behaviour.
 if has("wildmenu")
     set wildmenu
@@ -163,37 +157,8 @@ if has("wildmenu")
     endif
 endif
 
-" Basic stuff.
-set encoding=utf-8
-set hidden
-set visualbell
-set autoindent
-set copyindent " Copy the indentation from the previous line; e.g., tabs and spaces.
-set cinoptions=(0 " Correct line continuation indentation inside brackets.
-set foldmethod=syntax
-set foldopen-=block
-set backspace=indent,eol,start
-set modeline
-set modelines=50
-
-set history=50 " Keep 50 lines of command line history.
-set ruler " Show the cursor position all the time.
-set showcmd " Display incomplete commands.
-set incsearch " Enable incremental searching.
-
-set showmatch
-set showmode
-set scrolloff=3
-set cursorline
-set number
-set listchars=tab:▸·,eol:¬,trail:·,extends:«,precedes:»,nbsp:_
-
 nmap <silent> <leader>u :syntax sync fromstart<CR>:redraw!<CR>
 nmap <silent> <leader>l :set list!<CR>
-
-" More intuitive split behaviour.
-set splitbelow
-set splitright
 
 " Paste mode shortcut.
 nnoremap <silent> <leader>p :set paste!<CR>
@@ -238,28 +203,12 @@ set dir=~/.tmp
 set backupdir=~/.tmp
 set backup
 
-" Formatting options.
-set textwidth=100
-set formatoptions-=t " Don't wrap all lines.
-set formatoptions+=c " Auto-wrap comments.
-set formatoptions+=r " Insert comment leader on <Enter> in insert mode.
-set formatoptions+=o " Insert comment leader after "o" or "O"
-set formatoptions+=q " Comment formatting with "gq".
-set formatoptions+=l " Don't break long lines automatically.
-if has('patch-7.3.541')
-    set formatoptions+=j " Remove comment leader from joined lines.
-endif
-if exists('&breakindent')
-    set breakindent
-end
-
 " Always enable status line.
 set laststatus=2
 
 " Folding mappings.
 nnoremap <silent> <CR> za
 nnoremap <silent> <leader><CR> zA
-nnoremap <silent> <C-LeftMouse> <LeftMouse>za
 
 if has("autocmd") && !exists("autocommands_loaded")
     let autocommands_loaded = 1
@@ -268,10 +217,6 @@ if has("autocmd") && !exists("autocommands_loaded")
     " this clash:
     autocmd CmdwinEnter * nnoremap <CR> <CR>
     autocmd BufReadPost quickfix nnoremap <CR> <CR>
-
-    " Allow for tab-local working directories.
-    autocmd TabEnter * if exists("t:wd") | exe "cd " . t:wd | endif
-    autocmd TabLeave * let t:wd = getcwd()
 
     " Vim has a habit of clearing the clipboard on exit.  Undo this stupid behaviour.
     autocmd VimLeave * call system("xsel -ib", getreg("+"))
@@ -305,22 +250,10 @@ if has("autocmd") && !exists("autocommands_loaded")
         \     && expand("%") !~ "git-rebase-todo" |
         \     exe "normal! g`\"" |
         \ endif
-
-    if exists('&relativenumber')
-        " Automatically enable relative numbering.
-        set relativenumber
-        autocmd BufReadPost * set relativenumber
-        autocmd BufNewFile * set relativenumber
-        autocmd BufWinEnter * set relativenumber
-    endif
 endif
 
 " Easy saving when lacking sudo permissions!
 nnoremap <leader>W :w !sudo tee %<CR>
-
-" Easy wrap toggling!
-set linebreak
-nnoremap <leader>w :set nowrap!<CR>
 
 " Camel/Pascal case identifier navigation.
 nnoremap <silent> <C-Left> :call search('\<\<Bar>\u', 'bW')<CR>
