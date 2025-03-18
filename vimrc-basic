@@ -15,8 +15,6 @@ map <PageUp> <C-u>
 map <PageDown> <C-d>
 imap <PageUp> <C-o><C-u>
 imap <PageDown> <C-o><C-d>
-nmap <C-b> g;
-nmap <C-n> g,
 
 " Yank to end of line.
 map <silent> Y y$
