@@ -116,7 +116,8 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " Convenience plugins.
 let g:SuperTabDefaultCompletionType = '<c-n>'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
+Plug 'Noeda/supertab' " https://github.com/ervandew/supertab/issues/225#issuecomment-2770115097
 Plug 'andymass/vim-matchup'
 Plug 'christoomey/vim-tmux-navigator'
 
