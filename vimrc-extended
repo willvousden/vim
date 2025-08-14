@@ -29,7 +29,7 @@ set wildignore+=*.pyc
 
 set showtabline=2
 let g:lightline = {
-    \ 'colorscheme': '16color',
+    \ 'colorscheme': 'solarized8',
     \ 'tabline': {
     \   'left': [ ['buffers'] ],
     \   'right': [ ['close'] ]
@@ -47,6 +47,8 @@ let g:lightline#bufferline#clickable = 1
 let g:lightline.component_raw = {'buffers': 1}
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'itchyny/lightline.vim'
+" We don't need to show the mode in the normal way, as lightline does this for us.
+set noshowmode
 
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_theme = "lightline"

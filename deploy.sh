@@ -19,3 +19,5 @@ if hash nvim 2> /dev/null; then
     echo "Don't forget to set up Python for Neovim!"
     echo '    $ pip install pynvim'
 fi
+
+ln -sf ../../../../../solarized8.vim plugged/lightline.vim/autoload/lightline/colorscheme/solarized8.vim
