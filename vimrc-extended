@@ -31,6 +31,10 @@ set showtabline=2
 let g:solarized_termcolors = 16
 let g:lightline = {
     \ 'colorscheme': 'solarized_custom',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
     \ 'tabline': {
     \   'left': [ ['buffers'] ],
     \   'right': [ ['close'] ]
@@ -40,13 +44,17 @@ let g:lightline = {
     \ },
     \ 'component_type': {
     \   'buffers': 'tabsel'
-    \ }
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'gitbranch#name'
+    \ },
   \ }
 let g:lightline#bufferline#min_buffer_count = 2
 let g:lightline#bufferline#show_number = 1
 let g:lightline#bufferline#clickable = 1
 let g:lightline.component_raw = {'buffers': 1}
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 " We don't need to show the mode in the normal way, as lightline does this for us.
 set noshowmode
