@@ -70,6 +70,7 @@ end
 set splitbelow
 set splitright
 
+set number
 if exists('&relativenumber')
     set relativenumber
 endif
