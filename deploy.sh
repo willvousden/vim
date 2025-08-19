@@ -20,4 +20,4 @@ if hash nvim 2> /dev/null; then
     echo '    $ pip install pynvim'
 fi
 
-ln -sf ../../../../../solarized8.vim plugged/lightline.vim/autoload/lightline/colorscheme/solarized8.vim
+ln -sf ../../../../../solarized_custom.vim plugged/lightline.vim/autoload/lightline/colorscheme/solarized_custom.vim

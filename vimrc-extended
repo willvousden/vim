@@ -28,8 +28,9 @@ set wildignore+=*.pyc
 set wildignore+=*.pyc
 
 set showtabline=2
+let g:solarized_termcolors = 16
 let g:lightline = {
-    \ 'colorscheme': 'solarized8',
+    \ 'colorscheme': 'solarized_custom',
     \ 'tabline': {
     \   'left': [ ['buffers'] ],
     \   'right': [ ['close'] ]
@@ -141,7 +142,7 @@ if &t_Co > 2 || has("gui_running")
     if &t_Co >= 16 || has("gui_running")
         let g:solarized_t_Co=16
         set notermguicolors
-        set background=dark
+        set background=light
         colorscheme solarized8
     endif
 endif
