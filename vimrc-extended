@@ -112,6 +112,8 @@ Plug 'hynek/vim-python-pep8-indent'
 let g:SimpylFold_docstring_preview=1
 Plug 'tmhedberg/SimpylFold'
 
+Plug 'nvim-treesitter/nvim-treesitter', { 'branch': 'main' }
+
 " CSS.
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
