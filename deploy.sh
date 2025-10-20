@@ -18,6 +18,13 @@ mkdir -p ~/.tmp
 [[ -e "$PLUG_PATH" ]] || curl -fLo "$PLUG_PATH" --create-dirs "$PLUG"
 nvim -u "$INIT_PATH" +PlugInstall +qall
 
+# Tree Sitter set-up.
+if which tree-sitter 2> /dev/null; then
+    nvim -u "$INIT_PATH" +'TSInstall python' +qall
+else
+    printf 'WARNING: tree-sitter-cli not installed!\n'
+fi
+
 # This is a modified Solarized colorscheme for lightline that uses terminal colours.
 # TODO: See if the built-in one can be made to work out-of-the-box (potentially with a GitHub PR).
 ln -sf ../../../../../solarized_custom.vim plugged/lightline.vim/autoload/lightline/colorscheme/solarized_custom.vim
