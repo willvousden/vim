@@ -19,7 +19,7 @@ mkdir -p ~/.tmp
 nvim -u "$INIT_PATH" +PlugInstall +qall
 
 # Tree Sitter set-up.
-if which tree-sitter 2> /dev/null; then
+if command -v tree-sitter >/dev/null 2>&1; then
     nvim -u "$INIT_PATH" +'TSInstall python' +qall
 else
     printf 'WARNING: tree-sitter-cli not installed!\n'
