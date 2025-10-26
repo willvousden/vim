@@ -169,6 +169,7 @@ if has("wildmenu")
     endif
 endif
 
+set listchars=eol:¬,tab:>·,extends:>,precedes:<,space:␣
 nmap <silent> <leader>u :syntax sync fromstart<CR>:redraw!<CR>
 nmap <silent> <leader>l :set list!<CR>
 
