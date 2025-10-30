@@ -14,18 +14,7 @@ Plug 'embear/vim-localvimrc'
 
 " CtrlP!
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 Plug 'ctrlpvim/ctrlp.vim'
-set wildignore+=*/tmp/*
-set wildignore+=*/build/*
-set wildignore+=*/node_modules/*
-set wildignore+=*/__pycache__/*
-set wildignore+=*.so
-set wildignore+=*.o
-set wildignore+=*.class
-set wildignore+=*.swp
-set wildignore+=*.pyc
-set wildignore+=*.pyc
 
 set showtabline=2
 let g:solarized_termcolors = 16

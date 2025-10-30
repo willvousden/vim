@@ -8,6 +8,16 @@ set ignorecase
 set gdefault " Invert global subsitute behaviour.
 nnoremap <silent> <leader>k :nohl<CR><C-l>
 
+set wildignore+=*/tmp/*,*/build/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/__pycache__/*,*/.pytest_cache/*,*/.mypy_cache/*
+set wildignore+=*.so
+set wildignore+=*.o
+set wildignore+=*.class,*.jar
+set wildignore+=*.swp
+set wildignore+=*.pyc
+
 " Navigation.
 map <Up> gk
 map <Down> gj
