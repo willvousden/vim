@@ -4,17 +4,19 @@ set -euo pipefail
 PLUG=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 INIT_PATH=~/.config/nvim/init.vim
-VIM_PATH=$(pwd)
-PLUG_PATH="$VIM_PATH/autoload/plug.vim"
 PYTHON3_VENV_PATH=~/.python3-neovim
 
 # Deploy dotfiles.
-mkdir -p "$(dirname "$INIT_PATH")"
-ln -snf "$VIM_PATH/init.vim" "$INIT_PATH"
-ln -snf "$VIM_PATH/vimrc" ~/.vimrc
+ln -snf "$(readlink -f vimrc)" ~/.vimrc
 mkdir -p ~/.tmp
+mkdir -p "$(dirname "$INIT_PATH")"
+cat << INIT_VIM > "$INIT_PATH"
+let g:python3_host_prog = '$PYTHON3_VENV_PATH/bin/python3'
+source ~/.vimrc
+INIT_VIM
 
 # Install Plug.
+PLUG_PATH="$(readlink -f autoload/plug.vim)"
 [[ -e "$PLUG_PATH" ]] || curl -fLo "$PLUG_PATH" --create-dirs "$PLUG"
 nvim -u "$INIT_PATH" +PlugInstall +qall
 
