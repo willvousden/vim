@@ -149,9 +149,6 @@ endif
 if has("wildmenu")
     set wildmenu
     set wildmode=longest,list
-    set wildignore+=*.a,*.o
-    set wildignore+=.DS_store,.git,.hg,.svn
-    set wildignore+=*~,*.swp,*.tmp
 
     if has("wildignorecase")
         set wildignorecase
