@@ -137,7 +137,7 @@ if &t_Co > 2 || has("gui_running")
     if &t_Co >= 16 || has("gui_running")
         let g:solarized_t_Co=16
         set notermguicolors
-        set background=light
+        set background=dark
         colorscheme solarized8
     endif
 endif
