@@ -45,13 +45,9 @@ let g:lightline.component_raw = {'buffers': 1}
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
+
 " We don't need to show the mode in the normal way, as lightline does this for us.
 set noshowmode
-
-let g:tmuxline_powerline_separators = 0
-let g:tmuxline_theme = "lightline"
-let g:tmuxline_preset = "full"
-Plug 'edkolev/tmuxline.vim'
 
 " Destroy the current buffer without closing the split.
 nmap <leader>d :bp<bar>sp<bar>bn<bar>bd<cr>
