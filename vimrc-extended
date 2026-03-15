@@ -16,6 +16,9 @@ Plug 'embear/vim-localvimrc'
 let g:ctrlp_show_hidden = 1
 Plug 'ctrlpvim/ctrlp.vim'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 set showtabline=2
 let g:solarized_termcolors = 16
 let g:lightline = {
